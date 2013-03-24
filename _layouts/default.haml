@@ -1,0 +1,16 @@
+!!!html
+%html{lang: "en"}
+  %head
+    %title Go Beyond the Textbook
+    %meta{name: "description", content: "The LevelUp program will take those interested in going above and beyond regular textbook learning through a course of six sessions over six weeks, designed to equip participants with the skills and knowledge needed to bridge the gap between university and working life."}
+
+    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,300', rel: 'stylesheet', type: 'text/css'}
+    %link{rel: "stylesheet", href: "assets/css/bootstrap.css"}
+    %link{rel: "stylesheet", href: "assets/css/main.css"}
+
+  %body
+    .container
+      %header.header
+        %a{href: "/"}
+          %img{src: "assets/img/brand.png", title: "LevelUp: ThoughtWorks"}
+      {{ content }}

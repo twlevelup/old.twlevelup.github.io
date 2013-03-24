@@ -1,0 +1,87 @@
+@mixin small-text {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@mixin normal-text {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+body {
+    @include normal-text;
+
+    font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+    color: rgb(102, 102, 102);
+    padding: 0px;
+}
+
+a {
+    color: #2b9ea6;
+}
+
+.header {
+    margin: 20px 0;
+}
+
+.upcoming {
+    margin-top: 40px;
+    color: #e30066;
+}
+
+.session-small {
+    margin-bottom: 20px;
+
+    h2 {
+        @include normal-text;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        @include small-text;
+        margin-top: 0;
+        color: rgb(182, 182, 182);
+    }
+
+    .date {
+        @include small-text;
+        margin-left: 10px;
+    }
+}
+
+.session {
+    h2 {
+        color: black;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin-top: -10px;
+    }
+}
+
+.links {
+    list-style-type: none;
+    margin-left: 0;
+
+    h4 {
+        @include small-text;
+    }
+
+    li {
+        float: left;
+        margin-right: 10px;
+    }
+}
+
+.btn.btn-primary {
+    background-color: #2b9ea6;
+    background-image: none;
+    color: white;
+    border: none;
+
+    &:hover {
+        background-color: #61ced6;
+    }
+}

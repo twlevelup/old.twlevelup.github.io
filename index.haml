@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+.session-small
+  %h2
+    %a{href: "{{ post.url }}"} {{ post.title }}
+    %span.date ({{ post.date | date_to_string }})
+  %h3 {{ post.subtitle }}
+{% endfor %}
+
+%h4.upcoming Upcoming Sessions...
+
+.session-small
+  %h2
+    Test Driving Your Code
+    %span.date (26 Mar 2013)
+  %h3 TDD, Pair Programming and Refactoring
+
+.session-small
+  %h2
+    Software Integration Myth Buster
+    %span.date (16 Apr 2013)
+  %h3 Continuous Integration and Continuous Delivery
+
+.session-small
+  %h2
+    Expressive Code and Expressive People Make Software Awesome
+    %span.date (23 Apr 2013)
+  %h3 Communications and feedback &mdash; the IT context
+
+.session-small
+  %h2
+    What? When? Who? How?
+    %span.date (30 Apr 2013)
+  %h3 Wrap up, retro, debrief, questions and looking forward
+
