@@ -59,6 +59,15 @@ a {
         font-size: 18px;
         margin-top: -10px;
     }
+
+    .video {
+        margin-bottom: 15px;
+
+        h3 {
+            @include small-text;
+            color: rgb(182, 182, 182);
+        }
+    }
 }
 
 .links {

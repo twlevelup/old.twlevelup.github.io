@@ -6,11 +6,11 @@ title: Life Can Be Better
 subtitle: Agile &mdash; The Way of Doing Things
 ---
 
-.session
-  %h2 {{ page.title }}
-  %h3 {{ page.subtitle }}
+.session.row
+  .summary.span8
+    %h2 {{ page.title }}
+    %h3 {{ page.subtitle }}
 
-  .summary
     %p
       Life in software development is writing 250 page requirements
       documents that nobody reads and become irrelevant the minute they are
@@ -39,11 +39,21 @@ subtitle: Agile &mdash; The Way of Doing Things
       This session will show you how you could have a better life working in
       software delivery. And why you should make other feel the same.
 
-  %ul.links
-    %h4 Links:
-    %li
-      %a.btn.btn-primary{href: "#", title: "Slides"} Slides
-    %li
-      %a.btn.btn-primary{href: "#", title: "Watch the lecture"} Video
-  .clear
+  .lecture.span2
+    .video
+      %h3 Part 1
+      <iframe src="http://player.vimeo.com/video/62303470" width="320" height="240" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+    .video
+      %h3 Part 2
+      <iframe src="http://player.vimeo.com/video/62309025" width="320" height="240" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+%ul.links
+  %h4 Links:
+  %li
+    Video:
+    %a.btn.btn-primary{href: "https://vimeo.com/62303470", title: "Agile Fundamentals Part 1"} 1
+  %li
+    %a.btn.btn-primary{href: "https://vimeo.com/62309025", title: "Agile Fundamentals Part 2"} 2
+.clear
 
