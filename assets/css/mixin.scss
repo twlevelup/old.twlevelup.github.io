@@ -1,0 +1,16 @@
+@mixin bg-absolute {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+$grey1: #e1e1e1;
+$grey2: #ccc;
+$grey3: #b7b7b7;
+$grey4: #a1a1a1;
+$grey5: #898989;
+$grey6: #707070;
+$grey7: #555;
+$grey8: #363636;
