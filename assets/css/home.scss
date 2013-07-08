@@ -1,0 +1,125 @@
+body {
+  #sky {
+    padding-bottom: 0;
+    .container {
+
+      #hero {
+        padding: 20px 0;
+        h1 {
+          font-size: 5.5em;
+          padding-top: 20px;
+          text-shadow: 0px 4px 0px rgb(255, 255, 255);
+          strong {
+            color: $red;
+          }
+          span {
+            display: block;
+            @include uni;
+            letter-spacing: -0.15em;
+            padding-top: 0.9em;
+            font-size: 0.6em;
+            text-shadow: none;
+          }
+        }
+        h3 {
+          color: $grey7;
+          font-weight: normal;
+          margin: 40px 0 50px 0;
+          line-height: 1.2em;
+          font-size: 1.6em;
+        }
+        #what-is-levelup {
+          p {
+            font-size: 1.2em;
+            line-height: 1.4em;
+            margin-bottom: 1.5em;
+            padding-right: 1em;
+          }
+        }
+      } // #hero
+
+      #application {
+        a.apply-now {
+          display: block;
+          height: 144px;
+          background: transparent url('/assets/img/home/button.png') no-repeat top center;
+          text-align: center;
+          span {
+            @include unibold;
+            color: white;
+            font-size: 2em;
+            padding-top: 58px;
+            display: block;
+            text-shadow: 0px 4px 0px rgb(0, 0, 0);
+          }
+          &:hover, &:active {
+            text-decoration: none;
+            span {
+              color: #fff799;
+            }
+          }
+        }
+        #form {
+          height: 50px;
+          background: transparent url('/assets/img/home/box.png') repeat-y top center;
+        }
+
+      } // @apply-now
+    }
+  } //#sky
+
+  #ground {
+    #coaches {
+      h2 {
+        margin: 0 0 35px 0;
+      }
+      .person {
+        a {
+          img {
+            @include pixelborder;
+          }
+          span {
+            display: block;
+            margin: 10px 0;
+          }
+        }
+        p {
+          padding-right: 30px;
+        }
+      }
+    }
+  } // #ground
+
+  #water {
+    #events {
+      h2 {
+        margin: 0 0 35px 0;
+      }
+      .event {
+        h4 {
+          .date {
+            color: $grey6;
+            font-weight: normal;
+            font-size: 0.9em;
+          }
+          img {
+            @include pixelborder;
+            margin: 15px 0;
+          }
+        }
+        .blockquote {
+          font-size: 1.2em;
+          line-height: 1.4em;
+          padding-bottom: 15px;
+          span {
+            font-style: italic;
+            color: $grey6;
+            font-size: 0.8em;
+            display: block;
+          }
+        }
+      }
+    }
+  } // #water
+
+}
