@@ -7,8 +7,10 @@
     %link{rel: "stylesheet", href: "assets/css/bootstrap.css"}
     %link{rel: "stylesheet", href: "assets/css/main.css"}
 
-  %body
+    %script{type: "text/javascript", src: "assets/js/animations.js"}
+    %script{type: "text/javascript", src: "assets/js/jquery-2.0.3.min.js"}
 
+  %body
     .top-alert
       %p
         :plain
@@ -21,7 +23,7 @@
       .cloud &nbsp;
       .container
         %header.header.row
-          %a.left{href: "/"}
+          .left{onClick: "levelUp.animation.hideApplication()"}
             %img{src: "assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
           %ul.nav.nav-pills
             %li
@@ -57,9 +59,36 @@
                 :plain
                   Did we mention <strong>free dinner</strong> yet?
         #application.row
-          %a.apply-now{href: "/"}
+          %a.apply-now{onClick: "levelUp.animation.showApplication()"}
             %span Apply Now
-          #form &nbsp;
+          %form#form.hide{type: "post", action: "/sign-up"}
+
+            -inputs = [{:text => "First Name", :name => "name", :type => "text"},
+               {:text => "Last Name", :name => "surname", :type => "text"},
+               {:text => "Email Address", :name => "email", :type => "text"},
+               {:text => "Phone Number", :name => "phone", :type => "text"},
+               {:text => "What best describes your software design experience", :name => "experience", :type => "textarea"},
+               {:text => "In 150 words or less, tell us why you should be picked?", :name => "why", :type => "textarea"}]
+
+            -inputs.each do |field|
+              .row-fluid
+                .span5.right-align
+                  #{field[:text]}
+                .span7
+                  - if field[:type] == "text"
+                    %input.span10{id: field[:name], name: field[:name], type: "text"}
+                  - if field[:type] == "textarea"
+                    %textarea.span10{id: field[:name], name: field[:name], type: "text"}
+
+            .row-fluid
+              .span5
+                #nothing
+              .span7
+                %button.btn.btn-warning{type: "submit"}
+                  Sign Up
+                %button.btn.btn-danger{type: "button", onClick: "levelUp.animation.hideApplication()"}
+                  Cancel
+
 
 
     #ground
@@ -70,21 +99,17 @@
           .span3
             %h2 Coach
             %a.bitbtn.btn-secondary{href: "/coaches"} More coaches
-          .span3.person
-            %a.bit{href: "/coaches/sam-gibson"}
-              %img{src: "assets/img/coaches/sam-gibson.jpg", title: "Sam Gibson"}
-              %span Sam Gibson
-            %p Like to make stuff. Mostly complex stuff that needs to scale. Also requested unicorn on this site.
-          .span3.person
-            %a.bit{href: "/coaches/sam-gibson"}
-              %img{src: "assets/img/coaches/sam-gibson.jpg", title: "Sam Gibson"}
-              %span Sam Messey
-            %p 20+ years veteran in being British. Believe that there can be only one Sam.
-          .span3.person
-            %a.bit{href: "/coaches/sam-gibson"}
-              %img{src: "assets/img/coaches/sam-gibson.jpg", title: "Sam Gibson"}
-              %span Sam Newman
-            %p 9 years experience. Spoken at Agile Australia, YOW, and many more. Loves pranks.
+
+          - coaches = [{:link => "/coaches/sam-gibson", :src => "assets/img/coaches/sam-gibson.jpg", :name => "Sam Gibson", :description => "Like to make stuff. Mostly complex stuff that needs to scale. Also requested unicorn on this site."},
+            {:link => "/coaches/peter-budd", :src => "http://placekitten.com/200/150", :name => "Peter Budd", :description => "Writes code, some of it okay..."},
+            {:link => "/coaches/pete-chemsripong", :src => "http://placekitten.com/300/250", :name => "Pete Chemsripong", :description => "Mad UX skills"}]
+
+          - coaches.each do |coach|
+            .span3.person
+              %a.bit{href: coach[:link]}
+                %img{src: coach[:src], title: coach[:name]}
+                %span #{coach[:name]}
+              %p #{coach[:description]}
 
 
 
@@ -97,34 +122,26 @@
         #events.row
           .span3
             %h2 Past events
-            %a.bitbtn.btn-secondary{href: "/coaches"} More events
-          .span5.event
-            %h4
-              %a{href: "/events/levelup-exp"}
-                %span.bit LevelUp EXP
-                %span.date : 22 June 2013
-                %img{src: "assets/img/events/levelup-exp.jpg", title: "LevelUp EXP"}
-            .blockquote
-              "(Level Up EXP) was valuable!"
-              %span &#8212; John Smith, University of Sydney
-            .blockquote
-              "Couldn't believe how good looking the Experience Designers are!"
-              %span &#8212; Jane Smith, University of New South Wales
-            .blockquote
-              "(Level Up EXP) was valuable!"
-              %span &#8212; John Smith, University of Sydney
-          .span4.event
-            %h4
-              %a{href: "/events/levelup-exp"}
-                %span.bit LevelUp One
-                %span.date : 22 June 2013
-                %img{src: "assets/img/events/levelup-exp.jpg", title: "LevelUp EXP"}
-            .blockquote
-              "(Level Up EXP) was valuable!"
-              %span &#8212; John Smith, University of Sydney
-            .blockquote
-              "Couldn't believe how good looking the Experience Designers are!"
-              %span &#8212; Jane Smith, University of New South Wales
+            %a.bitbtn.btn-secondary{href: "/events"} More events
+          .span9
+            - past_events = [{:link => "/events/levelup-exp", :title => "LevelUp EXP", :date => "22 June 2013", :image => "assets/img/events/levelup-exp.jpg", :image_title => "LevelUp EXP", :quotes => [{:quote => "(Level Up EXP) was valuable!", :person => "John Smith, University of Sydney"},
+                                                                                                                                                                                                         {:quote => "Couldn't believe how good looking the Experience Designers are!", :person => "Jane Smith, University of New South Wales"},
+                                                                                                                                                                                                         {:quote => "(Level Up EXP) was valuable!", :person => "John Smith, University of Sydney"}]},
+              {:link => "/events/levelup-one", :title => "LevelUp One", :date => "12 March 2013", :image => "assets/img/events/levelup-exp.jpg", :image_title => "LevelUp One", :quotes => [{:quote => "(Level Up EXP) was valuable!", :person => "John Smith, University of Sydney"},
+                                                                                                                                                                                           {:quote => "Couldn't believe how good looking the Experience Designers are!", :person => "Jane Smith, University of New South Wales"}]}]
+
+            .row-fluid
+              - past_events.each do |event|
+                .span6.event
+                  %h4
+                    %a{href: event[:link]}
+                      %span.bit #{event[:title]}
+                      %span.date : #{event[:date]}
+                      %img{src: event[:image], title: event[:image_title]}
+                  - event[:quotes].each do |quote|
+                    .blockquote
+                      "#{quote[:quote]}"
+                      %span &#8212; #{quote[:person]}
 
     %footer.footer
       .blueblock &nbsp;

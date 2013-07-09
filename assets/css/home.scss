@@ -62,8 +62,10 @@ body {
           }
         }
         #form {
-          height: 50px;
+          min-height: 50px;
           background: transparent url('/assets/img/home/box.png') repeat-y top center;
+          padding: 10px 50px;
+          margin-bottom: 0px;
         }
 
       } // @apply-now
@@ -79,6 +81,7 @@ body {
         a {
           img {
             @include pixelborder;
+            height: 134px;
           }
           span {
             display: block;
