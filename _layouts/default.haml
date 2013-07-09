@@ -3,8 +3,7 @@
   %head
     %title Go Beyond the Textbook
     %meta{name: "description", content: "The LevelUp program will take those interested in going above and beyond regular textbook learning through a course of six sessions over six weeks, designed to equip participants with the skills and knowledge needed to bridge the gap between university and working life."}
-
-    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,300', rel: 'stylesheet', type: 'text/css'}
+    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400', rel: 'stylesheet', type: 'text/css'}
     %link{rel: "stylesheet", href: "assets/css/bootstrap.css"}
     %link{rel: "stylesheet", href: "assets/css/main.css"}
 
@@ -13,12 +12,13 @@
     .top-alert
       %p
         :plain
-          Level Up 2 : Level Harder <span>starts</span> 33 Aug <span>&#64;</span> ThoughtWorks Sydney
+          Level Up Two <span>starts</span> 33 Aug <span>&#64;</span> ThoughtWorks Sydney
 
     #sky
       .sky &nbsp;
       .hill-back &nbsp;
       .hill-front &nbsp;
+      .cloud &nbsp;
       .container
         %header.header
           %a{href: "/"}
@@ -36,7 +36,7 @@
         #hero
           %h1
             :plain
-              Level Up Round 2 : Level Harder <span>Get a job, keep it... and enjoy it!</span>
+              LEVEL UP <strong>TWO</strong><span>Get a job, keep it... and enjoy it!</span>
           %h3 ThoughtWorks' LevelUp Course helps students bridge the gap between university and the work place. Gain practical knowledges, upgrade your portfolio, meet peers, and make connections!
           #what-is-levelup.row
             .span6
@@ -56,28 +56,75 @@
               %p
                 :plain
                   Did we mention <strong>free dinner</strong> yet?
+        #application.row
+          %a.apply-now{href: "/"}
+            %span Apply Now
+          #form &nbsp;
+
 
     #ground
       .grass &nbsp;
       .ground &nbsp;
       .container
-        %p This is the Ground Theme container
-        %p This is the Ground Theme container
-        %p This is the Ground Theme container
-        %p This is the Ground Theme container
-        %p This is the Ground Theme container
+        #coaches.row
+          .span3
+            %h2 Coach
+            %a.bitbtn.btn-secondary{href: "/coaches"} More coaches
+          .span3.person
+            %a.bit{href: "/coaches/sam-gibson"}
+              %img{src: "assets/img/coaches/sam-gibson.jpg", title: "Sam Gibson"}
+              %span Sam Gibson
+            %p Like to make stuff. Mostly complex stuff that needs to scale. Also requested unicorn on this site.
+          .span3.person
+            %a.bit{href: "/coaches/sam-gibson"}
+              %img{src: "assets/img/coaches/sam-gibson.jpg", title: "Sam Gibson"}
+              %span Sam Messey
+            %p 20+ years veteran in being British. Believe that there can be only one Sam.
+          .span3.person
+            %a.bit{href: "/coaches/sam-gibson"}
+              %img{src: "assets/img/coaches/sam-gibson.jpg", title: "Sam Gibson"}
+              %span Sam Newman
+            %p 9 years experience. Spoken at Agile Australia, YOW, and many more. Loves pranks.
+
+
 
     #water
       .wave &nbsp;
-      .water
-        .container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-
+      .water &nbsp;
+      .seaweed &nbsp;
+      .bubbles &nbsp;
+      .container
+        #events.row
+          .span3
+            %h2 Past events
+            %a.bitbtn.btn-secondary{href: "/coaches"} More events
+          .span5.event
+            %h4
+              %a{href: "/events/levelup-exp"}
+                %span.bit LevelUp EXP
+                %span.date : 22 June 2013
+                %img{src: "assets/img/events/levelup-exp.jpg", title: "LevelUp EXP"}
+            .blockquote
+              "(Level Up EXP) was valuable!"
+              %span &#8212; John Smith, University of Sydney
+            .blockquote
+              "Couldn't believe how good looking the Experience Designers are!"
+              %span &#8212; Jane Smith, University of New South Wales
+            .blockquote
+              "(Level Up EXP) was valuable!"
+              %span &#8212; John Smith, University of Sydney
+          .span4.event
+            %h4
+              %a{href: "/events/levelup-exp"}
+                %span.bit LevelUp One
+                %span.date : 22 June 2013
+                %img{src: "assets/img/events/levelup-exp.jpg", title: "LevelUp EXP"}
+            .blockquote
+              "(Level Up EXP) was valuable!"
+              %span &#8212; John Smith, University of Sydney
+            .blockquote
+              "Couldn't believe how good looking the Experience Designers are!"
+              %span &#8212; Jane Smith, University of New South Wales
 
     %footer.footer
       .blueblock &nbsp;
