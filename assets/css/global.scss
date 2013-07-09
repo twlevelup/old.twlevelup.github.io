@@ -80,6 +80,9 @@ body {
     }
     .container {
       header, .header {
+        a.left {
+          float: left;
+        }
         ul.nav {
           float: right;
           li a {
