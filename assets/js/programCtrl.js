@@ -1,8 +1,8 @@
-function eventCtrl($scope) {
-  $scope.events = [
+function programCtrl($scope) {
+  $scope.programs = [
     {
-      week: "Level Up 1",
-      summary: "WHooooooo",
+      week: "Week 1",
+      summary: "For the first week, we're going to learn about My Little Pony",
       description: "My Little Pony is an entertainment franchise developed by Hasbro which is marketed primarily to girls. It started as a line of plastic pony toys developed by Bonnie Zacherle, Charles Muenchinger and Steve D'Aguanno which have been produced since 1983. The ponies feature colorful bodies, manes and a unique symbol on one or both sides of their flanks. These are referred to in the two most recent generations as \"cutie marks.\" My Little Pony was revamped at least four times with new and more modern looks to appeal to a new market.",
       preReading: [
         {
@@ -17,8 +17,8 @@ function eventCtrl($scope) {
     },
 
     {
-      week: "Level Up EXP",
-      summary: "Some more stuff!!!",
+      week: "Week 2",
+      summary: "For the second week, we will discuss the physics that underpins Superman, the man of steel",
       description: "Superman is kinda bullshit, and is an 8 years old's idea of a superhero as he does everything well and nothing can hurt him, makes for interesting television (not)",
       preReading: [
         {

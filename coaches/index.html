@@ -1,104 +1,108 @@
 <!DOCTYPE html>
 <html lang='en' ng-app>
-<head>
-    <title>Go Beyond the Textbook</title>
-    <meta content='The LevelUp program will take those interested in going above and beyond regular textbook learning through a course of six sessions over six weeks, designed to equip participants with the skills and knowledge needed to bridge the gap between university and working life.' name='description'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-    <link href='/assets/css/bootstrap.css' rel='stylesheet'>
-    <link href='/assets/css/main.css' rel='stylesheet'>
+	<head>
+		<title>Go Beyond the Textbook</title>
+		<meta content='The LevelUp program will take those interested in going above and beyond regular textbook learning through a course of six sessions over six weeks, designed to equip participants with the skills and knowledge needed to bridge the gap between university and working life.'
+			  name='description'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+		<link href='/assets/css/bootstrap.css' rel='stylesheet'>
+		<link href='/assets/css/main.css' rel='stylesheet'>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-	<script src="/assets/js/coachCtrl.js"></script>
-</head>
-<body>
-<div class='top-alert'>
-    <p>
-        Level Up Two <span>starts</span> 33 Aug <span>&#64;</span> ThoughtWorks Sydney
-    </p>
-</div>
-<div id='sky'>
-    <div class='sky'>&nbsp;</div>
-    <div class='hill-back'>&nbsp;</div>
-    <div class='hill-front'>&nbsp;</div>
-    <div class='cloud'>&nbsp;</div>
-    <div class='container'>
-        <header class='header row'>
-            <a class='left' href='/'>
-                <img src='/assets/img/page-structure/logo.png' title='LevelUp: ThoughtWorks'>
-            </a>
-            <ul class='nav nav-pills'>
-                <li>
-                    <a href='/programs'>
-                        Programs
-                    </a>
-                </li>
-                <li class="active">
-                    <a href='/coaches'>
-                        Coaches
-                    </a>
-                </li>
-                <li>
-                    <a href='/events'>
-                        Past Events
-                    </a>
-                </li>
-            </ul>
-        </header>
-        <div class='row' id='program' ng-controller="coachCtrl">
-            <div class="profile" ng-repeat="coach in coaches">
-                <h2>{{coach.name}}</h2>
-                <img ng-src="{{coach.image}}">
-                <p ng-bind-html-unsafe="coach.blurb"></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id='ground'>
-    <div class='grass'>&nbsp;</div>
-    <div class='ground'>&nbsp;</div>
-    <div class='container'>
-    </div>
-</div>
-<div id='water'>
-    <div class='wave'>&nbsp;</div>
-    <div class='water'>&nbsp;</div>
-    <div class='seaweed'>&nbsp;</div>
-    <div class='bubbles'>&nbsp;</div>
-    <div class='container'>
-    </div>
-</div>
-<footer class='footer'>
-    <div class='blueblock'>&nbsp;</div>
-    <div class='dark'>
-        <div class='container'>
-            <p>
-                Connect with us
-                <a href='/'>
-                    Twitter
-                </a>
-                <a href='/'>
-                    Facebook
-                </a>
-            <ul>
-                <li>
-                    <a href='/programs'>
-                        Programs
-                    </a>
-                </li>
-                <li>
-                    <a href='/coaches'>
-                        Coaches
-                    </a>
-                </li>
-                <li>
-                    <a href='/past-events'>
-                        Past Events
-                    </a>
-                </li>
-            </ul>
-            </p>
-        </div>
-    </div>
-</footer>
-</body>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="/assets/js/coachCtrl.js"></script>
+	</head>
+	<body>
+		<div class='top-alert'>
+			<p>
+				Level Up Two <span>starts</span> 33 Aug <span>&#64;</span> ThoughtWorks Sydney
+			</p>
+		</div>
+		<div id='sky'>
+			<div class='sky'>&nbsp;</div>
+			<div class='hill-back'>&nbsp;</div>
+			<div class='hill-front'>&nbsp;</div>
+			<div class='cloud'>&nbsp;</div>
+			<div class='container'>
+				<header class='header row'>
+					<a class='left' href='/'>
+						<img src='/assets/img/page-structure/logo.png' title='LevelUp: ThoughtWorks'>
+					</a>
+					<ul class='nav nav-pills'>
+						<li>
+							<a href='/programs'>
+								Programs
+							</a>
+						</li>
+						<li class="active">
+							<a href='/coaches'>
+								Coaches
+							</a>
+						</li>
+						<li>
+							<a href='/events'>
+								Past Events
+							</a>
+						</li>
+					</ul>
+				</header>
+
+				<div class='row' id='program' ng-controller="coachCtrl">
+					<div class="profile" ng-repeat="coach in coaches">
+						<h2>{{coach.name}}</h2>
+						<img ng-src="{{coach.image}}">
+
+						<p ng-bind-html-unsafe="coach.blurb"></p>
+					</div>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+		</div>
+		<div id='ground'>
+			<div class='grass'>&nbsp;</div>
+			<div class='ground'>&nbsp;</div>
+			<div class='container'>
+			</div>
+		</div>
+		<div id='water'>
+			<div class='wave'>&nbsp;</div>
+			<div class='water'>&nbsp;</div>
+			<div class='seaweed'>&nbsp;</div>
+			<div class='bubbles'>&nbsp;</div>
+			<div class='container'>
+			</div>
+		</div>
+		<footer class='footer'>
+			<div class='blueblock'>&nbsp;</div>
+			<div class='dark'>
+				<div class='container'>
+					<p>
+						Connect with us
+						<a href='/'>
+							Twitter
+						</a>
+						<a href='/'>
+							Facebook
+						</a>
+					<ul>
+						<li>
+							<a href='/programs'>
+								Programs
+							</a>
+						</li>
+						<li>
+							<a href='/coaches'>
+								Coaches
+							</a>
+						</li>
+						<li>
+							<a href='/past-events'>
+								Past Events
+							</a>
+						</li>
+					</ul>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
 </html>
