@@ -1,0 +1,39 @@
+@import "mixin";
+
+body {
+  #ground {
+    .container {
+      h1 {
+        padding-bottom: 20px;
+      }
+      .box {
+        .top, .bot {
+          width: 960px;
+          height: 35px;
+        }
+        .top {
+          background: transparent url('/assets/img/page-structure/box/top.png') no-repeat top center;
+        }
+        .mid {
+          background: transparent url('/assets/img/page-structure/box/mid.png') repeat-y top center;
+          padding: 10px 45px;
+          h3 {
+            display: block;
+            @include uni;
+          }
+          h4 {
+            padding-bottom: 20px;
+            font-weight: normal;
+          }
+          img {
+            @include pixelborder;
+          }
+        }
+        .bot {
+          background: transparent url('/assets/img/page-structure/box/bot.png') no-repeat top center;
+        }
+
+      }
+    }
+  } // #ground
+}

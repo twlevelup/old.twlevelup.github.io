@@ -52,7 +52,7 @@
 
 						<p>{{ program.summary }}</p>
 
-						<p>{{ program.description }}</p>
+						<p ng-bind-html-unsafe="program.description"></p>
 						<h4>Pre-reading</h4>
 						<ul>
 							<li ng-repeat="reading in program.preReading">

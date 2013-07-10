@@ -19,8 +19,8 @@
 		</div>
 		<div id='sky'>
 			<div class='sky'>&nbsp;</div>
-			<div class='hill-back'>&nbsp;</div>
-			<div class='hill-front'>&nbsp;</div>
+			<!--<div class='hill-back'>&nbsp;</div>-->
+			<!--<div class='hill-front'>&nbsp;</div>-->
 			<div class='cloud'>&nbsp;</div>
 			<div class='container'>
 				<header class='header row'>
@@ -45,29 +45,44 @@
 						</li>
 					</ul>
 				</header>
-
-				<div class='row' id='program' ng-controller="coachCtrl">
-					<div class="profile" ng-repeat="coach in coaches">
-						<h2>{{coach.name}}</h2>
-						<img ng-src="{{coach.image}}">
-
-						<p ng-bind-html-unsafe="coach.blurb"></p>
-					</div>
-					<p>&nbsp;</p>
-				</div>
+                <p>&nbsp;</p>
 			</div>
 		</div>
 		<div id='ground'>
 			<div class='grass'>&nbsp;</div>
 			<div class='ground'>&nbsp;</div>
 			<div class='container'>
+                <div class="row">
+                    <h1>Coaches</h1>
+                </div>
+                <div class='row' id='program' ng-controller="coachCtrl">
+                    <div class="profile box" ng-repeat="coach in coaches">
+                        <div class='top'>&nbsp;</div>
+                        <div class='mid'>
+                            <h3>{{coach.name}}</h3>
+                            <h4>{{coach.title}}</h4>
+                            <div class="row">
+                                <div class="span2">
+                                    <img ng-src="{{coach.image}}">
+                                </div>
+                                <div class="span8">
+                                    <p ng-bind-html-unsafe="coach.blurb"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='bot'>&nbsp;</div>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+
+
 			</div>
 		</div>
 		<div id='water'>
 			<div class='wave'>&nbsp;</div>
 			<div class='water'>&nbsp;</div>
-			<div class='seaweed'>&nbsp;</div>
-			<div class='bubbles'>&nbsp;</div>
+			<!--<div class='seaweed'>&nbsp;</div>-->
+			<!--<div class='bubbles'>&nbsp;</div>-->
 			<div class='container'>
 			</div>
 		</div>
