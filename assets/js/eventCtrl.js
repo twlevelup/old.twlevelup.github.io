@@ -1,35 +1,29 @@
 function eventCtrl($scope) {
   $scope.events = [
     {
-      week: "Level Up 1",
-      summary: "WHooooooo",
-      description: "My Little Pony is an entertainment franchise developed by Hasbro which is marketed primarily to girls. It started as a line of plastic pony toys developed by Bonnie Zacherle, Charles Muenchinger and Steve D'Aguanno which have been produced since 1983. The ponies feature colorful bodies, manes and a unique symbol on one or both sides of their flanks. These are referred to in the two most recent generations as \"cutie marks.\" My Little Pony was revamped at least four times with new and more modern looks to appeal to a new market.",
-      preReading: [
-        {
-          link: "www.youtube.com/watch?v=GI2fP2Z_Wmo‎",
-          title: "My Little Pony on Youtube"
-        },
-        {
-          link: "www.hasbro.com/mylittlepony/en_AU/",
-          title: "My Little Pony Official Site"
-        }
+      name: "Level Up One",
+      summary: "The Origin",
+      description: "The LevelUp program will take those interested in going above and beyond regular textbook learning through a course of six sessions over six weeks, designed to equip participants with the skills and knowledge needed to bridge the gap between university and working life.",
+      photobook: "https://www.facebook.com/media/set/?set=a.334512056677868.1073741828.334505716678502&type=1",
+      photos: [
+        { img: "/assets/img/events/lvlone-1.jpg‎" },
+        { img: "/assets/img/events/lvlone-2.jpg‎" },
+        { img: "/assets/img/events/lvlone-3.jpg‎" },
+        { img: "/assets/img/events/lvlone-4.jpg" }
       ]
     },
-
     {
-      week: "Level Up EXP",
-      summary: "Some more stuff!!!",
-      description: "Superman is kinda bullshit, and is an 8 years old's idea of a superhero as he does everything well and nothing can hurt him, makes for interesting television (not)",
-      preReading: [
-        {
-          link: "http://www.youtube.com/watch?v=T6DJcgm3wNY",
-          title: "Man of Steel trailer"
-        },
-        {
-          link: "http://www.rottentomatoes.com/m/superman_man_of_steel/",
-          title: "Rotten tomatoes review"
-        }
+      name: "Level Up EXP",
+      summary: "A Full Day Workout",
+      description: "niversity students graduate every year, and enter the workforce often unprepared for what they encounter. On 22nd June, 2013 we hope to change that. We are bringing together computer science and information technology students with professional technical visionaries and engineers to explore the future together.",
+      photobook: "https://www.facebook.com/media/set/?set=a.341968892598851.1073741832.334505716678502&type=3",
+      photos: [
+        { img: "/assets/img/events/lvlxp-1.jpg‎" },
+        { img: "/assets/img/events/lvlxp-2.jpg‎" },
+        { img: "/assets/img/events/lvlxp-3.jpg‎" },
+        { img: "/assets/img/events/lvlxp-4.jpg" }
       ]
     }
+
   ];
 }
