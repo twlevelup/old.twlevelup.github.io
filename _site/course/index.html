@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang='en' ng-app>
+	<head>
+		<title>ThoughtWorks' LevelUp - Go Beyond the Textbook</title>
+		<meta content='The LevelUp program will take those interested in going above and beyond regular textbook learning through a course of six sessions over six weeks, designed to equip participants with the skills and knowledge needed to bridge the gap between university and working life.'
+			  name='description'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+		<link href='/assets/css/bootstrap.css' rel='stylesheet'>
+		<link href='/assets/css/main.css' rel='stylesheet'>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="/assets/js/courseCtrl.js"></script>
+	</head>
+	<body>
+		<div class='top-alert'>
+			<p>
+				Level Up Two <span>starts</span> 33 Aug <span>&#64;</span> ThoughtWorks Sydney
+			</p>
+		</div>
+		<div id='sky'>
+			<div class='sky'>&nbsp;</div>
+			<div class='hill-back'>&nbsp;</div>
+			<div class='hill-front'>&nbsp;</div>
+			<div class='cloud'>&nbsp;</div>
+			<div class='container'>
+				<header class='header row'>
+					<a class='left' href='/'>
+						<img src='/assets/img/page-structure/logo.png' title='LevelUp: ThoughtWorks'>
+					</a>
+					<ul class='nav nav-pills'>
+						<li class="active">
+							<a href='/course'>
+								Course Details
+							</a>
+						</li>
+						<li>
+							<a href='/coaches'>
+								Coaches
+							</a>
+						</li>
+						<li>
+							<a href='/events'>
+								Past Events
+							</a>
+						</li>
+					</ul>
+				</header>
+
+
+				<div class='row' id='course' ng-controller="programCtrl">
+                    <div class="top">&nbsp;</div>
+                    <div class="mid">
+                        <div class="row">
+                            <h1>Course Details</h1>
+                        </div>
+                        <div class="row week" ng-repeat="program in programs">
+
+                            <div class="row">
+                                <div class="span12">
+                                    <div class="header">
+                                        <h3>{{program.week}}</h3>
+                                        <h4>{{ program.summary }}</h4>
+                                        <img src="/assets/img/page-structure/course/dot.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="span8">
+                                    <div class="left">
+
+
+
+                                        <p ng-bind-html-unsafe="program.description"></p>
+                                    </div>
+
+                                </div>
+                                <div class="span4">
+                                    <div class="right">
+                                        <h4>Pre-reading</h4>
+                                        <ul>
+                                            <li ng-repeat="reading in program.preReading">
+                                                <a target="_blank" ng-href="{{reading.link}}">{{reading.title}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class="bot">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div id='ground'>
+			<div class='grass'>&nbsp;</div>
+			<div class='ground'>&nbsp;</div>
+			<div class='container'>
+			</div>
+		</div>
+        <footer class="footer">
+            <div class="blueblock">&nbsp;</div>
+            <div class="dark">
+                <div class="container">
+                    <h4>Connect with us</h4>
+                    <ul class="nav social">
+                        <li>
+                            <a href="https://twitter.com/TW_LevelUp">
+                                <img src="/assets/img/page-structure/footer/twitter.png" title="Twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/ThoughtworksLevelUp">
+                                <img src="/assets/img/page-structure/footer/facebook.png" title="Facebook">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-pills">
+                        <li>
+                            <a href="/course">
+                                Course Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/coaches">
+                                Coaches
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/events">
+                                Past Events
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+	</body>
+</html>
