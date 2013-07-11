@@ -9,7 +9,7 @@
 		<link href='/assets/css/main.css' rel='stylesheet'>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-		<script src="/assets/js/eventCtrl.js"></script>
+		<script src="/assets/js/courseCtrl.js"></script>
 	</head>
 	<body>
 		<div class='top-alert'>
@@ -19,15 +19,18 @@
 		</div>
 		<div id='sky'>
 			<div class='sky'>&nbsp;</div>
-			<div class='container' id="coaches-list">
+			<div class='hill-back'>&nbsp;</div>
+			<div class='hill-front'>&nbsp;</div>
+			<div class='cloud'>&nbsp;</div>
+			<div class='container'>
 				<header class='header row'>
 					<a class='left' href='/'>
 						<img src='/assets/img/page-structure/logo.png' title='LevelUp: ThoughtWorks'>
 					</a>
 					<ul class='nav nav-pills'>
-						<li>
+						<li class="active">
 							<a href='/course'>
-                                Course Details
+								Course Details
 							</a>
 						</li>
 						<li>
@@ -35,14 +38,40 @@
 								Coaches
 							</a>
 						</li>
-						<li class="active">
+						<li>
 							<a href='/events'>
 								Past Events
 							</a>
 						</li>
 					</ul>
 				</header>
-                <p>&nbsp;</p>
+
+
+				<div class='row' id='course' ng-controller="programCtrl">
+                    <div class="top">&nbsp;</div>
+                    <div class="mid">
+                        <h2>Course Details</h2>
+                        <div class="row" ng-repeat="program in programs">
+                            <div class="span8">
+                                <div class="week">
+                                    <img src="/assets/img/page-structure/course/dot.png">
+                                    <h3>{{program.week}}</h3>
+                                    <h4>{{ program.summary }}</h4>
+                                    <p ng-bind-html-unsafe="program.description"></p>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <h4>Pre-reading</h4>
+                                <ul>
+                                    <li ng-repeat="reading in program.preReading">
+                                        <a target="_blank" ng-href="{{reading.link}}">{{reading.title}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bot">&nbsp;</div>
+				</div>
 			</div>
 		</div>
 		</div>
@@ -50,49 +79,6 @@
 			<div class='grass'>&nbsp;</div>
 			<div class='ground'>&nbsp;</div>
 			<div class='container'>
-			</div>
-		</div>
-		<div id='water'>
-			<div class='wave'>&nbsp;</div>
-			<div class='water'>&nbsp;</div>
-			<div class='seaweed'>&nbsp;</div>
-			<div class='bubbles'>&nbsp;</div>
-			<div class='container'>
-                <div class='row' id='events' ng-controller="eventCtrl">
-                    <h1>Past Events</h1>
-                    <p>&nbsp;</p>
-                    <div class="event" ng-repeat="event in events">
-
-                        <div class="row">
-                            <div class="span12">
-                                <h3>{{event.name}}</h3>
-                                <h4>{{event.date}}</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="span7">
-                                <div class="left">
-                                    <p>{{ event.description }}</p>
-                                    <div class="photo">
-                                        <img ng-repeat="photo in event.photos" ng-src="{{photo.img}}">
-                                    </div>
-                                    <a target="_blank" class="bitbtn" ng-href="{{event.photobook}}">More photos from <img src="/assets/img/page-structure/footer/facebook.png" title="Facebook"></a>
-                                </div>
-                            </div>
-                            <div class="span5">
-                                <div class="right">
-                                    <div class="blockquote" ng-repeat="testie in event.testimonial">
-                                        <p>&ldquo;{{testie.text}}&rdquo;</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line">&nbsp</div>
-                    </div>
-                </div>
-
-
-
 			</div>
 		</div>
         <footer class="footer">

@@ -1,0 +1,57 @@
+@import "mixin";
+
+body {
+
+  #water {
+    .container {
+      #events {
+        .event {
+          .line {
+            height: 58px;
+            background: transparent url('/assets/img/page-structure/water/line.png') no-repeat center center;
+            padding: 20px 0;
+          }
+          h3 {
+            @include unibold;
+          }
+          h4 {
+            @include uni;
+            padding-bottom: 20px;
+          }
+          .photo {
+            padding: 20px 0;
+            img {
+              @include pixelborder;
+              margin: 0 20px 20px 0;
+            }
+          }
+          .bitbtn {
+            &:hover {
+              img {
+                @include pixelborder(white);
+                background: white;
+              }
+            }
+            img {
+              margin-left: 10px;
+            }
+          }
+          .left {
+            border-right: 5px solid #5fbde0;
+            margin-bottom: 30px;
+            p {
+              padding-right: 20px;
+            }
+          }
+          .right {
+            padding-left: 10px;
+          }
+
+
+        }
+
+      }// #events
+    } //.container
+  } //#water
+
+}

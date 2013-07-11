@@ -131,11 +131,11 @@
             %h2 Past events
             %a.bitbtn.btn-secondary{href: "/events"} More events
           .span9
-            - past_events = [{:link => "/events/levelup-exp", :title => "LevelUp EXP", :date => "22 June 2013", :image => "assets/img/events/levelup-exp.jpg", :image_title => "LevelUp EXP", :quotes => [{:quote => "(Level Up EXP) was valuable!", :person => "John Smith, University of Sydney"},
-                                                                                                                                                                                                         {:quote => "Couldn't believe how good looking the Experience Designers are!", :person => "Jane Smith, University of New South Wales"},
-                                                                                                                                                                                                         {:quote => "(Level Up EXP) was valuable!", :person => "John Smith, University of Sydney"}]},
-              {:link => "/events/levelup-one", :title => "LevelUp One", :date => "12 March 2013", :image => "assets/img/events/levelup-exp.jpg", :image_title => "LevelUp One", :quotes => [{:quote => "(Level Up EXP) was valuable!", :person => "John Smith, University of Sydney"},
-                                                                                                                                                                                           {:quote => "Couldn't believe how good looking the Experience Designers are!", :person => "Jane Smith, University of New South Wales"}]}]
+            - past_events = [{:link => "/events/levelup-exp", :title => "LevelUp EXP", :date => "22 June 2013", :image => "assets/img/events/lvlxp-1.jpg", :image_title => "LevelUp EXP", :quotes => [{:quote => "Good to know what's actually happening outside of Uni", :person => "Level Up EXP Attendee"},
+                                                                                                                                                                                                         {:quote => "Thank you ThoughtWorks for taking time on a weekend of conducting an insightful and very helpful session", :person => "Level Up EXP Attendee"},
+                                                                                                                                                                                                         {:quote => "Inspiring", :person => "Level Up EXP Attendee"}]},
+              {:link => "/events/levelup-one", :title => "LevelUp One", :date => "12 March 2013", :image => "assets/img/events/lvlone-2.jpg", :image_title => "LevelUp One", :quotes => [{:quote => "Great coverage of a broad topic. I didn't know what to expect at first & was greatly impressed with ThoughtWorker's ability to impart knowledge", :person => "Level Up One Student"},
+                                                                                                                                                                                           {:quote => "Well fed; chillaxed nature", :person => "Level Up One Student"}]}]
 
             .row-fluid
               - past_events.each do |event|
@@ -147,7 +147,7 @@
                       %img{src: event[:image], title: event[:image_title]}
                   - event[:quotes].each do |quote|
                     .blockquote
-                      "#{quote[:quote]}"
+                      &ldquo;#{quote[:quote]}&rdquo;
                       %span &#8212; #{quote[:person]}
 
     %footer.footer
