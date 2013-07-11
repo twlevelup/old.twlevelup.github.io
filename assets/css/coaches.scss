@@ -2,13 +2,19 @@
 
 body {
   #ground {
-    .container {
-      h1 {
-        padding-bottom: 20px;
+    #coaches-list.container {
+      h2 {
+        padding-bottom: 60px;
+        @include uni;
+        color: $grey6;
+        span {
+          color: black;
+          @include unibold;
+        }
       }
       .box {
         .top, .bot {
-          width: 960px;
+          width: 460px;
           height: 35px;
         }
         .top {
@@ -16,17 +22,37 @@ body {
         }
         .mid {
           background: transparent url('/assets/img/page-structure/box/mid.png') repeat-y top center;
-          padding: 10px 45px;
+          padding: 0 45px 10px 45px;
+          .photo {
+            position: relative;
+            width: 170px;
+            height: 120px;
+            float: left;
+            img {
+              position: absolute;
+              top: -40px;
+              left: 0;
+              @include pixelborder;
+            }
+          }
           h3 {
             display: block;
-            @include uni;
+            @include unibold;
+            font-size: 1.2em;
+            margin: 0;
+            line-height: 1.5em;
           }
           h4 {
-            padding-bottom: 20px;
             font-weight: normal;
+            padding-bottom: 17px;
+            color: $grey6;
+            @include uni;
+            font-size: 0.95em;
           }
-          img {
-            @include pixelborder;
+          h5 {
+            @include uni;
+            font-size: 0.95em;
+            margin: 20px 0 0 0;
           }
         }
         .bot {

@@ -150,6 +150,33 @@ body {
     }
     .dark {
       background: #242c3a;
+      .container {
+        padding: 15px 0;
+        h4 {
+          @include unibold;
+          padding: 10px 20px 6px 10px;
+          float: left;
+        }
+        ul {
+          @include uni;
+          &.social {
+            li {
+              float: left;
+              margin: 0 4px;
+              a {
+                &:hover {
+                  @include pixelborder(white);
+                }
+              }
+            }
+          }
+          float: left;
+          &:last-child {
+            float: right;
+            margin-top: 18px;
+          }
+        }
+      }
     }
   } //footer
 

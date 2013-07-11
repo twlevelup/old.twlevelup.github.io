@@ -29,8 +29,8 @@
 					</a>
 					<ul class='nav nav-pills'>
 						<li>
-							<a href='/programs'>
-								Programs
+							<a href='/course'>
+								Course Details
 							</a>
 						</li>
 						<li class="active">
@@ -51,29 +51,53 @@
 		<div id='ground'>
 			<div class='grass'>&nbsp;</div>
 			<div class='ground'>&nbsp;</div>
-			<div class='container'>
+			<div class='container' id="coaches-list">
                 <div class="row">
-                    <h1>Coaches</h1>
+                    <h1>Coaches &amp; Speakers</h1>
+                    <h2>Total Work Experience in Years = <span>193 YEARS!</span></h2>
+
                 </div>
-                <div class='row' id='program' ng-controller="coachCtrl">
-                    <div class="profile box" ng-repeat="coach in coaches">
-                        <div class='top'>&nbsp;</div>
-                        <div class='mid'>
-                            <h3>{{coach.name}}</h3>
-                            <h4>{{coach.title}}</h4>
-                            <div class="row">
-                                <div class="span2">
+
+                <div class="row" >
+                    <div class="span6" ng-controller="coachLeftCtrl">
+
+                        <div class="profile box" ng-repeat="coach in coaches">
+                            <div class='top'>&nbsp;</div>
+                            <div class='mid'>
+                                <div class="photo">
                                     <img ng-src="{{coach.image}}">
                                 </div>
-                                <div class="span8">
-                                    <p ng-bind-html-unsafe="coach.blurb"></p>
-                                </div>
+                                <h3>{{coach.name}}</h3>
+                                <h4>{{coach.title}}</h4>
+                                <p ng-bind-html-unsafe="coach.blurb"></p>
+                                <h5>8 yrs EXP : <a href="/">Twitter - Blog</a></h5>
                             </div>
+                            <div class='bot'>&nbsp;</div>
+                            <p>&nbsp;</p>
                         </div>
-                        <div class='bot'>&nbsp;</div>
-                        <p>&nbsp;</p>
+
+
+
+                    </div>
+                    <div class="span6"  ng-controller="coachRightCtrl">
+                        <div class="profile box" ng-repeat="coach in coaches">
+                            <div class='top'>&nbsp;</div>
+                            <div class='mid'>
+                                <div class="photo">
+                                    <img ng-src="{{coach.image}}">
+                                </div>
+                                <h3>{{coach.name}}</h3>
+                                <h4>{{coach.title}}</h4>
+                                <p ng-bind-html-unsafe="coach.blurb"></p>
+                                <h5>8 yrs EXP : <a href="/">Twitter - Blog</a></h5>
+                            </div>
+                            <div class='bot'>&nbsp;</div>
+                            <p>&nbsp;</p>
+                        </div>
                     </div>
                 </div>
+
+
 
 
 			</div>
@@ -86,38 +110,42 @@
 			<div class='container'>
 			</div>
 		</div>
-		<footer class='footer'>
-			<div class='blueblock'>&nbsp;</div>
-			<div class='dark'>
-				<div class='container'>
-					<p>
-						Connect with us
-						<a href='/'>
-							Twitter
-						</a>
-						<a href='/'>
-							Facebook
-						</a>
-					<ul>
-						<li>
-							<a href='/programs'>
-								Programs
-							</a>
-						</li>
-						<li>
-							<a href='/coaches'>
-								Coaches
-							</a>
-						</li>
-						<li>
-							<a href='/past-events'>
-								Past Events
-							</a>
-						</li>
-					</ul>
-					</p>
-				</div>
-			</div>
-		</footer>
+        <footer class="footer">
+            <div class="blueblock">&nbsp;</div>
+            <div class="dark">
+                <div class="container">
+                    <h4>Connect with us</h4>
+                    <ul class="nav social">
+                        <li>
+                            <a href="https://twitter.com/TW_LevelUp">
+                                <img src="/assets/img/page-structure/footer/twitter.png" title="Twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/ThoughtworksLevelUp">
+                                <img src="/assets/img/page-structure/footer/facebook.png" title="Facebook">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-pills">
+                        <li>
+                            <a href="/course">
+                                Course Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/coaches">
+                                Coaches
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/events">
+                                Past Events
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 	</body>
 </html>

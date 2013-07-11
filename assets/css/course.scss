@@ -1,0 +1,39 @@
+@import "mixin";
+
+body {
+  #sky {
+    .container {
+      #course {
+        margin: 40px 0;
+        .top {
+          width: 940px;
+          height: 110px;
+          background: transparent url('/assets/img/page-structure/course/top.png') no-repeat top center;
+        }
+
+        .mid {
+          background: transparent url('/assets/img/page-structure/course/mid.png') repeat-y top center;
+          h2 {
+            margin: 0 0 40px 40px;
+          }
+          .week {
+            background: transparent url('/assets/img/page-structure/course/road.png') repeat-y 75px top;
+            padding: 0 0 0 120px;
+            position: relative;
+            img {
+              position: absolute;
+              top: -5px;
+              left: 70px;
+            }
+          }
+        }
+
+        .bot {
+          width: 940px;
+          height: 215px;
+          background: transparent url('/assets/img/page-structure/course/bot.png') no-repeat top center;
+        }
+      }
+    }
+  } //#sky
+}

@@ -17,9 +17,8 @@ body {
           span {
             display: block;
             @include uni;
-            letter-spacing: -0.15em;
-            padding-top: 0.9em;
-            font-size: 0.6em;
+            padding-top: 1.2em;
+            font-size: 0.45em;
             text-shadow: none;
           }
         }
@@ -28,7 +27,7 @@ body {
           font-weight: normal;
           margin: 40px 0 50px 0;
           line-height: 1.2em;
-          font-size: 1.6em;
+          font-size: 1.8em;
         }
         #what-is-levelup {
           p {
@@ -76,6 +75,9 @@ body {
     #coaches {
       h2 {
         margin: 0 0 35px 0;
+      }
+      .blurb {
+        padding-left: 20px;
       }
       .person {
         a {
@@ -126,5 +128,6 @@ body {
       }
     }
   } // #water
+
 
 }

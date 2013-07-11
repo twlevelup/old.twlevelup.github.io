@@ -27,7 +27,7 @@
             %img{src: "assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
           %ul.nav.nav-pills
             %li
-              %a{href: "/programs"}
+              %a{href: "/course"}
                 Course Details
             %li
               %a{href: "/coaches"}
@@ -44,20 +44,20 @@
             .span6
               %p
                 :plain
-                  Over 9 weeks, you'll deliver a project from start* to finish, guided by highly experienced professionals. We'll teach you everything you need to know along the way, from planning and design to writing and testing your own code. At the end you won't just walk away with working software for your portfolio - you'll have knowledge, skills and experience to hit the ground running in the workplace.
+                  Over 9 weeks, you'll deliver a project from start to finish, guided by highly experienced professionals. We'll teach you everything you need to know along the way, from planning and design to writing and testing your own code. At the end you won't just walk away with working software for your portfolio - you'll have knowledge, skills and experience to hit the ground running in the workplace.
               %p
                 :plain
                   Your guides on the journey will be the best software professionals around - delivering software for our clients by day, and teaching you how to do it by night. You can't buy this kind of experience anywhere (and if you could, it would be astonishingly expensive).
+              %p
+                :plain
+                  We'll give it to you <strong>for free</strong>.
             .span6
               %p
                 :plain
-                  We'll give it to you for free.
+                  Availability for the upcoming semester is strictly limited, with only <strong>25 spaces available</strong>. Your commitment is the only entrance fee - we want people who are just as passionate about software as we are, and as keen to learn as we are to help! Applications are open now!
               %p
                 :plain
-                  Availability for the upcoming semester is strictly limited, with only 25 spaces available. Your commitment is the only entrance fee - we want people who are just as passionate about software as we are, and as keen to learn as we are to help! Applications are open now!
-              %p
-                :plain
-                  Level Up semester 2 will run every Wednesday night for 9 weeks, starting on the Xth August. We'll be working from the ThoughtWorks Sydney headquarters in Circular Quay - Level 8, 51 Pitt St, Sydney.
+                  Level Up semester 2 will run every <strong>Wednesday night</strong> for <strong>9 weeks</strong>, starting on the <strong>Xth August</strong>. We'll be working from the <strong>ThoughtWorks Sydney</strong> headquarters in Circular Quay - <strong>Level 8, 51 Pitt St, Sydney</strong>.
         #application.row
           %a.apply-now{onClick: "levelUp.animation.showApplication()"}
             %span Apply Now
@@ -99,17 +99,24 @@
           .span3
             %h2 Coach
             %a.bitbtn.btn-secondary{href: "/coaches"} More coaches
+          .span9
+            .row
+              .blurb
+                %p Don't know who we are? ThoughtWorks is a community of passionate individuals whose purpose is to revolutionise software design, creation and delivery, while advocating for positive social change. (Also, we're consultants).
+                %p Your individual mentors at LevelUp will be many things - published authors, keynote speakers, technology revolutionaries. Above all, they'll be software sorcerers, project ninjas and agile advocates.
+                %p Want to get to know us before we start? Here's a little bit about the people you'll be working with.
+                %p &nbsp;
+            .row
+              - coaches = [{:link => "/coaches", :src => "assets/img/coaches/darren.jpg", :name => "Darren Smith", :description => "Over 18 years experience in the IT industry, across Australia, China, USA and Canada."},
+                {:link => "/coaches", :src => "assets/img/coaches/GarethSutton.jpg", :name => "Gareth Sutton", :description => "Consultative sales rep, looking to help customers find business and technical improvement."},
+                {:link => "/coaches", :src => "assets/img/coaches/AngusIrvine.jpg", :name => "Angus Irvine", :description => "Agile Business Analyst with considerable experience in web projects across both the commercial product and business application spaces."}]
 
-          - coaches = [{:link => "/coaches/sam-gibson", :src => "assets/img/coaches/sam-gibson.jpg", :name => "Sam Gibson", :description => "Like to make stuff. Mostly complex stuff that needs to scale. Also requested unicorn on this site."},
-            {:link => "/coaches/peter-budd", :src => "http://placekitten.com/200/150", :name => "Peter Budd", :description => "Writes code, some of it okay..."},
-            {:link => "/coaches/pete-chemsripong", :src => "http://placekitten.com/300/250", :name => "Pete Chemsripong", :description => "Mad UX skills"}]
-
-          - coaches.each do |coach|
-            .span3.person
-              %a.bit{href: coach[:link]}
-                %img{src: coach[:src], title: coach[:name]}
-                %span #{coach[:name]}
-              %p #{coach[:description]}
+              - coaches.each do |coach|
+                .span3.person
+                  %a.bit{href: coach[:link]}
+                    %img{src: coach[:src], title: coach[:name]}
+                    %span #{coach[:name]}
+                  %p #{coach[:description]}
 
 
 
@@ -147,19 +154,22 @@
       .blueblock &nbsp;
       .dark
         .container
-          %p
-            Connect with us
-            %a{href: "/"}
-              Twitter
-            %a{href: "/"}
-              Facebook
-            %ul
-              %li
-                %a{href: "/programs"}
-                  Programs
-              %li
-                %a{href: "/coaches"}
-                  Coaches
-              %li
-                %a{href: "/past-events"}
-                  Past Events
+          %h4 Connect with us
+
+          %ul.nav.social
+            %li
+              %a{href: "https://twitter.com/TW_LevelUp"}
+                %img{src: "/assets/img/page-structure/footer/twitter.png", title: "Twitter"}
+            %li
+              %a{href: "https://www.facebook.com/ThoughtworksLevelUp"}
+                %img{src: "/assets/img/page-structure/footer/facebook.png", title: "Facebook"}
+          %ul.nav.nav-pills
+            %li
+              %a{href: "/course"}
+                Course Details
+            %li
+              %a{href: "/coaches"}
+                Coaches
+            %li
+              %a{href: "/events"}
+                Past Events
