@@ -5,27 +5,52 @@ body {
     .container {
       #course {
         margin: 40px 0;
+        h1 {
+          margin: 0 0 50px 90px;
+        }
         .top {
           width: 940px;
           height: 91px;
           background: transparent url('/assets/img/page-structure/course/top.png') no-repeat top center;
         }
-
         .mid {
           background: transparent url('/assets/img/page-structure/course/mid.png') repeat-y top center;
-          h2 {
-            margin: 0 0 40px 40px;
-          }
           .week {
-            background: transparent url('/assets/img/page-structure/course/road.png') repeat-y 75px top;
-            padding: 0 0 0 120px;
+            background: transparent url('/assets/img/page-structure/course/road.png') repeat-y 100px top;
             position: relative;
-            img {
-              position: absolute;
-              top: -5px;
-              left: 70px;
+            padding-bottom: 60px;
+            .header {
+              margin: 0 0 0 160px;
+              h3 {
+                @include unibold;
+                margin: -8px 0 0 0;
+
+              }
+              h4 {
+                @include uni;
+                margin: 0 0 20px 0;
+                line-height: 1.5em;
+              }
+              img {
+                position: absolute;
+                top: -5px;
+                left: 95px;
+              }
             }
+
+            .left {
+              padding: 0 20px 0 160px;
+              border-right: 5px solid #e5caa3;
+            }
+            .right {
+              h4 {
+                margin: 0 0 10px 0;
+              }
+            }
+
+
           }
+
         }
 
         .bot {

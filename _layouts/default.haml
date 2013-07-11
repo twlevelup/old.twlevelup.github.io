@@ -1,7 +1,7 @@
 !!!html
 %html{lang: "en"}
   %head
-    %title Go Beyond the Textbook
+    %title ThoughtWorks' LevelUp - Go Beyond the Textbook
     %meta{name: "description", content: "The LevelUp program will take those interested in going above and beyond regular textbook learning through a course of six sessions over six weeks, designed to equip participants with the skills and knowledge needed to bridge the gap between university and working life."}
     %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400', rel: 'stylesheet', type: 'text/css'}
     %link{rel: "stylesheet", href: "assets/css/bootstrap.css"}
@@ -131,10 +131,10 @@
             %h2 Past events
             %a.bitbtn.btn-secondary{href: "/events"} More events
           .span9
-            - past_events = [{:link => "/events/levelup-exp", :title => "LevelUp EXP", :date => "22 June 2013", :image => "assets/img/events/lvlxp-1.jpg", :image_title => "LevelUp EXP", :quotes => [{:quote => "Good to know what's actually happening outside of Uni", :person => "Level Up EXP Attendee"},
+            - past_events = [{:link => "/events", :title => "LevelUp EXP", :date => "22 June 2013", :image => "assets/img/events/lvlxp-1.jpg", :image_title => "LevelUp EXP", :quotes => [{:quote => "Good to know what's actually happening outside of Uni", :person => "Level Up EXP Attendee"},
                                                                                                                                                                                                          {:quote => "Thank you ThoughtWorks for taking time on a weekend of conducting an insightful and very helpful session", :person => "Level Up EXP Attendee"},
                                                                                                                                                                                                          {:quote => "Inspiring", :person => "Level Up EXP Attendee"}]},
-              {:link => "/events/levelup-one", :title => "LevelUp One", :date => "12 March 2013", :image => "assets/img/events/lvlone-2.jpg", :image_title => "LevelUp One", :quotes => [{:quote => "Great coverage of a broad topic. I didn't know what to expect at first & was greatly impressed with ThoughtWorker's ability to impart knowledge", :person => "Level Up One Student"},
+              {:link => "/events", :title => "LevelUp One", :date => "12 March 2013", :image => "assets/img/events/lvlone-2.jpg", :image_title => "LevelUp One", :quotes => [{:quote => "Great coverage of a broad topic. I didn't know what to expect at first & was greatly impressed with ThoughtWorker's ability to impart knowledge", :person => "Level Up One Student"},
                                                                                                                                                                                            {:quote => "Well fed; chillaxed nature", :person => "Level Up One Student"}]}]
 
             .row-fluid
@@ -148,7 +148,6 @@
                   - event[:quotes].each do |quote|
                     .blockquote
                       &ldquo;#{quote[:quote]}&rdquo;
-                      %span &#8212; #{quote[:person]}
 
     %footer.footer
       .blueblock &nbsp;
