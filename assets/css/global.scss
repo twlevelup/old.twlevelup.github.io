@@ -1,0 +1,184 @@
+@import "mixin";
+
+h1, h2 {
+  @include unibold;
+  color: black;
+}
+
+a {
+  color: $bit;
+  &:hover, &:active {
+    color: darken($bit, 10%);
+  }
+}
+
+.bitbtn {
+  background: $bit;
+  @include uni;
+  @include pixelborder;
+  padding: 10px 15px 12px 15px;
+  margin-left: 0.3em;
+  color: white;
+  text-shadow: 0 2px 0 rgb(0, 0, 0);
+  &:hover, &:active {
+    color: white;
+    text-decoration: none;
+    background: darken($bit, 10%);
+  }
+}
+
+.bit {
+  @include uni;
+}
+
+body {
+
+  .top-alert {
+    background: $yellow;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    p {
+      font-weight: bold;
+      margin: 0;
+      span {
+        font-weight: normal;
+      }
+    }
+  } //.top-alert
+
+  #sky {
+    position: relative;
+    padding: 20px 0 30px 0;
+    .sky {
+      @include bg-absolute;
+      background: #b8f9ff url('/assets/img/page-structure/sky/sky.png') repeat-x top left;
+      top: 0;
+    }
+    .hill-back {
+      @include bg-absolute;
+      height: 351px;
+      background: transparent url('/assets/img/page-structure/sky/hill-back.png') repeat-x top left;
+    }
+    .hill-front {
+      @include bg-absolute;
+      left: -600px;
+      padding-right: 600px;
+      height: 636px;
+      background: transparent url('/assets/img/page-structure/sky/hill-front.png') repeat-x top center;
+    }
+    .cloud {
+      @include bg-absolute;
+      bottom: auto;
+      top: 109px;
+      left: -160px;
+      padding-right: 160px;
+      height: 210px;
+      background: transparent url('/assets/img/page-structure/sky/cloud.png') no-repeat top center;
+    }
+    .container {
+      header, .header {
+        .left {
+          float: left;
+        }
+        ul.nav {
+          float: right;
+          li a {
+            @include uni;
+          }
+        }
+      } //header
+    }
+  } //#sky
+
+  #ground {
+    padding-bottom: 30px;
+    position: relative;
+    .grass {
+      background: transparent url('/assets/img/page-structure/ground/grass.png') repeat-x top left;
+      height: 50px;
+    }
+    .ground {
+      @include bg-absolute;
+      top: 0;
+      background: #f1e0b6 url('/assets/img/page-structure/ground/ground.png') repeat top left;
+    }
+    .container {
+      padding: 30px 0;
+    }
+  } //#ground
+
+  #water {
+    position: relative;
+    .wave {
+      background: transparent url('/assets/img/page-structure/water/wave.png') repeat-x top left;
+      height: 55px;
+      margin-top: -20px;
+    }
+    .water {
+      background: #92e1fe;
+      @include bg-absolute;
+      top: 25px;
+      //
+
+    }
+    .seaweed {
+      @include bg-absolute;
+      background: transparent url('/assets/img/page-structure/water/seaweeds.png') repeat-x top center;
+      height: 241px;
+      left: -300px;
+      padding-right: 300px;
+    }
+    .bubbles {
+      @include bg-absolute;
+      background: transparent url('/assets/img/page-structure/water/bubbles.png') repeat-x top center;
+      height: 325px;
+      bottom: auto;
+      top: 120px;
+    }
+    .container {
+      padding-bottom: 80px;
+    }
+  } //#water
+
+  footer, .footer {
+    color: white;
+    .blueblock {
+      position: relative;
+      background: transparent url('/assets/img/page-structure/footer/block.png') repeat-x top left;
+      height: 100px;
+      margin-top: -10px;
+    }
+    .dark {
+      background: #242c3a;
+      .container {
+        padding: 15px 0;
+        h4 {
+          @include unibold;
+          padding: 10px 20px 6px 10px;
+          float: left;
+        }
+        ul {
+          @include uni;
+          &.social {
+            li {
+              float: left;
+              margin: 0 4px;
+              a {
+                &:hover {
+                  @include pixelborder(white);
+                }
+              }
+            }
+          }
+          float: left;
+          &:last-child {
+            float: right;
+            margin-top: 18px;
+          }
+        }
+      }
+    }
+  } //footer
+
+}

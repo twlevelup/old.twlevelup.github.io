@@ -1,16 +1,57 @@
-@mixin bg-absolute {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: -1;
+$grey1 : #e1e1e1;
+$grey2 : #ccc;
+$grey3 : #b7b7b7;
+$grey4 : #a1a1a1;
+$grey5 : #898989;
+$grey6 : #707070;
+$grey7 : #555;
+$grey8 : #363636;
+$red : #bc0005;
+$yellow : #f6ee4b;
+
+//bitbtn button colour
+$bit : #00897d;
+
+@mixin unibold {
+  font-family    : 'unibold';
+  letter-spacing : -0.1em;
 }
 
-$grey1: #e1e1e1;
-$grey2: #ccc;
-$grey3: #b7b7b7;
-$grey4: #a1a1a1;
-$grey5: #898989;
-$grey6: #707070;
-$grey7: #555;
-$grey8: #363636;
+@mixin uni {
+  font-family    : 'uni';
+  letter-spacing : -0.1em;
+}
+
+@mixin bg-absolute {
+  position : absolute;
+  left     : 0;
+  bottom   : 0;
+  width    : 100%;
+  z-index  : -1;
+}
+
+@mixin pixelborder($color : black) {
+  box-shadow : -0.3em 0 0 0 $color,
+    0 -0.3em 0 0 $color, 0.3em 0 0 0 $color, 0 0.3em 0 0 $color;
+}
+
+.right-align {
+  text-align : right;
+}
+
+@font-face {
+  font-family : 'unibold';
+  src         : url('fonts/unibody_8-bold-webfont.eot');
+  src         : url('fonts/unibody_8-bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/unibody_8-bold-webfont.woff') format('woff'), url('fonts/unibody_8-bold-webfont.ttf') format('truetype'), url('fonts/unibody_8-bold-webfont.svg#unibody_8bold') format('svg');
+  font-weight : normal;
+  font-style  : normal;
+}
+
+@font-face {
+  font-family : 'uni';
+  src         : url('fonts/unibody_8-regular-webfont.eot');
+  src         : url('fonts/unibody_8-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/unibody_8-regular-webfont.woff') format('woff'), url('fonts/unibody_8-regular-webfont.ttf') format('truetype'), url('fonts/unibody_8-regular-webfont.svg#unibody_8regular') format('svg');
+  font-weight : normal;
+  font-style  : normal;
+}
+

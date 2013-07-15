@@ -32,7 +32,7 @@ GEM
       maruku (~> 0.5)
       pygments.rb (~> 0.5.0)
       safe_yaml (~> 0.7.0)
-    jekyll-haml (0.0.1)
+    jekyll-haml (0.1.1)
       haml (>= 3.0.0)
       jekyll (>= 0.10.0)
     jekyll-sass (1.1.0)
@@ -47,6 +47,7 @@ GEM
     mime-types (1.23)
     netrc (0.7.7)
     posix-spawn (0.3.6)
+    psych (2.0.0)
     pygments.rb (0.5.1)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -71,4 +72,5 @@ DEPENDENCIES
   jekyll
   jekyll-haml
   jekyll-sass
+  psych
   rack-contrib

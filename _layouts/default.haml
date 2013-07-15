@@ -1,101 +1,174 @@
 !!!html
 %html{lang: "en"}
   %head
-    %title Go Beyond the Textbook
+    %title ThoughtWorks' LevelUp - Go Beyond the Textbook
     %meta{name: "description", content: "The LevelUp program will take those interested in going above and beyond regular textbook learning through a course of six sessions over six weeks, designed to equip participants with the skills and knowledge needed to bridge the gap between university and working life."}
-
-    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,300', rel: 'stylesheet', type: 'text/css'}
+    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400', rel: 'stylesheet', type: 'text/css'}
     %link{rel: "stylesheet", href: "assets/css/bootstrap.css"}
     %link{rel: "stylesheet", href: "assets/css/main.css"}
 
-  %body
+    %script{type: "text/javascript", src: "assets/js/animations.js"}
+    %script{type: "text/javascript", src: "assets/js/jquery-2.0.3.min.js"}
 
+  %body
     .top-alert
       %p
         :plain
-          Level Up 2 : Level Harder <span>starts</span> 33 Aug <span>&#64;</span> ThoughtWorks Sydney
+          Level Up Two <span>starts</span> 33 Aug <span>&#64;</span> ThoughtWorks Sydney
 
     #sky
       .sky &nbsp;
       .hill-back &nbsp;
       .hill-front &nbsp;
+      .cloud &nbsp;
       .container
-        %header.header
-          %a{href: "/"}
+        %header.header.row
+          .left{onClick: "levelUp.animation.hideApplication()"}
             %img{src: "assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
           %ul.nav.nav-pills
             %li
-              %a{href: "/programs"}
-                Programs
+              %a{href: "/course"}
+                Course Details
             %li
               %a{href: "/coaches"}
                 Coaches
             %li
-              %a{href: "/past-events"}
+              %a{href: "/events"}
                 Past Events
-        #hero
+        #hero.row
           %h1
             :plain
-              Level Up Round 2 : Level Harder <span>Get a job, keep it... and enjoy it!</span>
-          %h3 ThoughtWorks' LevelUp Course helps students bridge the gap between university and the work place. Gain practical knowledges, upgrade your portfolio, meet peers, and make connections!
+              LEVEL UP <strong>TWO</strong><span>Essential skills for future technologists</span>
+          %h3 ThoughtWorks' LevelUp program bridges the gap between what is taught at University, and what happens on the ground in software projects. Learn essential skills from people who do this not just <em>for</em> a living, but as a living.
           #what-is-levelup.row
             .span6
               %p
                 :plain
-                  The course is run by ThoughtWorks' own highly experienced software professional - yes, the same <strong>badasses</strong> we charged the client over $1,000 each day for their time.
+                  Over 9 weeks, you'll deliver a project from start to finish, guided by highly experienced professionals. We'll teach you everything you need to know along the way, from planning and design to writing and testing your own code. At the end you won't just walk away with working software for your portfolio - you'll have knowledge, skills and experience to hit the ground running in the workplace.
               %p
                 :plain
-                  Don't know who they are? Chances are you might have read their books, or see them speaking at big IT conferences around the world, or actually use their software in your day-to-day. Come and find out!
+                  Your guides on the journey will be the best software professionals around - delivering software for our clients by day, and teaching you how to do it by night. You can't buy this kind of experience anywhere (and if you could, it would be astonishingly expensive).
+              %p
+                :plain
+                  We'll give it to you <strong>for free</strong>.
             .span6
               %p
                 :plain
-                  The course is only available - limited <strong>25 seats</strong> - for students or non-professionals as a free application. <strong>You pay with your commitment.</strong> At the end of the course you will walk away with a piece of (awesome) working software for your portfolio.
+                  Availability for the upcoming semester is strictly limited, with only <strong>25 spaces available</strong>. Your commitment is the only entrance fee - we want people who are just as passionate about software as we are, and as keen to learn as we are to help! Applications are open now!
               %p
                 :plain
-                  The course run on <strong>every Wednesday night</strong> for <strong>9 weeks</strong> at the <strong>ThoughtWorks Sydney</strong> Headquarter in Circular Quay, starting <strong>33rd August 2013</strong>. Application close 32nd July 2013
-              %p
-                :plain
-                  Did we mention <strong>free dinner</strong> yet?
+                  Level Up semester 2 will run every <strong>Wednesday night</strong> for <strong>9 weeks</strong>, starting on the <strong>Xth August</strong>. We'll be working from the <strong>ThoughtWorks Sydney</strong> headquarters in Circular Quay - <strong>Level 8, 51 Pitt St, Sydney</strong>.
+        #application.row
+          %a.apply-now{onClick: "levelUp.animation.showApplication()"}
+            %span Apply Now
+          %form#form.hide{type: "post", action: "/sign-up"}
+
+            -inputs = [{:text => "First Name", :name => "name", :type => "text"},
+               {:text => "Last Name", :name => "surname", :type => "text"},
+               {:text => "Email Address", :name => "email", :type => "text"},
+               {:text => "Phone Number", :name => "phone", :type => "text"},
+               {:text => "What best describes your software design experience", :name => "experience", :type => "textarea"},
+               {:text => "In 150 words or less, tell us why you should be picked?", :name => "why", :type => "textarea"}]
+
+            -inputs.each do |field|
+              .row-fluid
+                .span5.right-align
+                  #{field[:text]}
+                .span7
+                  - if field[:type] == "text"
+                    %input.span10{id: field[:name], name: field[:name], type: "text"}
+                  - if field[:type] == "textarea"
+                    %textarea.span10{id: field[:name], name: field[:name], type: "text"}
+
+            .row-fluid
+              .span5
+                #nothing
+              .span7
+                %button.btn.btn-warning{type: "submit"}
+                  Sign Up
+                %button.btn.btn-danger{type: "button", onClick: "levelUp.animation.hideApplication()"}
+                  Cancel
+
+
 
     #ground
       .grass &nbsp;
       .ground &nbsp;
       .container
-        %p This is the Ground Theme container
-        %p This is the Ground Theme container
-        %p This is the Ground Theme container
-        %p This is the Ground Theme container
-        %p This is the Ground Theme container
+        #coaches.row
+          .span3
+            %h2 Coach
+            %a.bitbtn.btn-secondary{href: "/coaches"} More coaches
+          .span9
+            .row
+              .blurb
+                %p Don't know who we are? ThoughtWorks is a community of passionate individuals whose purpose is to revolutionise software design, creation and delivery, while advocating for positive social change. (Also, we're consultants).
+                %p Your individual mentors at LevelUp will be many things - published authors, keynote speakers, technology revolutionaries. Above all, they'll be software sorcerers, project ninjas and agile advocates.
+                %p Want to get to know us before we start? Here's a little bit about the people you'll be working with.
+                %p &nbsp;
+            .row
+              - coaches = [{:link => "/coaches", :src => "assets/img/coaches/darren.jpg", :name => "Darren Smith", :description => "Over 18 years experience in the IT industry, across Australia, China, USA and Canada."},
+                {:link => "/coaches", :src => "assets/img/coaches/GarethSutton.jpg", :name => "Gareth Sutton", :description => "Consultative sales rep, looking to help customers find business and technical improvement."},
+                {:link => "/coaches", :src => "assets/img/coaches/AngusIrvine.jpg", :name => "Angus Irvine", :description => "Agile Business Analyst with considerable experience in web projects across both the commercial product and business application spaces."}]
+
+              - coaches.each do |coach|
+                .span3.person
+                  %a.bit{href: coach[:link]}
+                    %img{src: coach[:src], title: coach[:name]}
+                    %span #{coach[:name]}
+                  %p #{coach[:description]}
+
+
 
     #water
       .wave &nbsp;
-      .water
-        .container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
-          %p This is the Water Theme container
+      .water &nbsp;
+      .seaweed &nbsp;
+      .bubbles &nbsp;
+      .container
+        #events.row
+          .span3
+            %h2 Past events
+            %a.bitbtn.btn-secondary{href: "/events"} More events
+          .span9
+            - past_events = [{:link => "/events", :title => "LevelUp EXP", :date => "22 June 2013", :image => "assets/img/events/lvlxp-1.jpg", :image_title => "LevelUp EXP", :quotes => [{:quote => "Good to know what's actually happening outside of Uni", :person => "Level Up EXP Attendee"},
+                                                                                                                                                                                                         {:quote => "Thank you ThoughtWorks for taking time on a weekend of conducting an insightful and very helpful session", :person => "Level Up EXP Attendee"},
+                                                                                                                                                                                                         {:quote => "Inspiring", :person => "Level Up EXP Attendee"}]},
+              {:link => "/events", :title => "LevelUp One", :date => "12 March 2013", :image => "assets/img/events/lvlone-2.jpg", :image_title => "LevelUp One", :quotes => [{:quote => "Great coverage of a broad topic. I didn't know what to expect at first & was greatly impressed with ThoughtWorker's ability to impart knowledge", :person => "Level Up One Student"},
+                                                                                                                                                                                           {:quote => "Well fed; chillaxed nature", :person => "Level Up One Student"}]}]
 
+            .row-fluid
+              - past_events.each do |event|
+                .span6.event
+                  %h4
+                    %a{href: event[:link]}
+                      %span.bit #{event[:title]}
+                      %span.date : #{event[:date]}
+                      %img{src: event[:image], title: event[:image_title]}
+                  - event[:quotes].each do |quote|
+                    .blockquote
+                      &ldquo;#{quote[:quote]}&rdquo;
 
     %footer.footer
       .blueblock &nbsp;
       .dark
         .container
-          %p
-            Connect with us
-            %a{href: "/"}
-              Twitter
-            %a{href: "/"}
-              Facebook
-            %ul
-              %li
-                %a{href: "/programs"}
-                  Programs
-              %li
-                %a{href: "/coaches"}
-                  Coaches
-              %li
-                %a{href: "/past-events"}
-                  Past Events
+          %h4 Connect with us
+
+          %ul.nav.social
+            %li
+              %a{href: "https://twitter.com/TW_LevelUp"}
+                %img{src: "/assets/img/page-structure/footer/twitter.png", title: "Twitter"}
+            %li
+              %a{href: "https://www.facebook.com/ThoughtworksLevelUp"}
+                %img{src: "/assets/img/page-structure/footer/facebook.png", title: "Facebook"}
+          %ul.nav.nav-pills
+            %li
+              %a{href: "/course"}
+                Course Details
+            %li
+              %a{href: "/coaches"}
+                Coaches
+            %li
+              %a{href: "/events"}
+                Past Events
