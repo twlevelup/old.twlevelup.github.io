@@ -1,3 +1,6 @@
 [master 42fca97] Content and template draft v1 is DONE
  9 files changed, 78 insertions(+), 41 deletions(-)
  rewrite assets/img/page-structure/course/bot.png (88%)
+_site
+*.swp
+.sass-cache
