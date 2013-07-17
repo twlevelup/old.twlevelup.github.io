@@ -1,6 +1,6 @@
 safe:        false
 port:        4000
-baseurl:     /levelup-website
+baseurl:     /
 source:      .
 destination: ./_site
 plugins:     ./_plugins

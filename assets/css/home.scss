@@ -14,14 +14,15 @@ body {
           strong {
             color: red;
           }
-          span {
-            display: block;
-            @include uni;
-            padding-top: 1.2em;
-            font-size: 0.45em;
-            text-shadow: none;
-          }
         }
+
+        h2 {
+          @include uni;
+          padding-top: 1.2em;
+          font-size: 2.45em;
+          text-shadow: none;
+        }
+
         h3 {
           color: $grey7;
           font-weight: normal;
