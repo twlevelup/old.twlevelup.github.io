@@ -66,6 +66,27 @@ body {
           background: transparent url('/assets/img/home/box.png') repeat-y top center;
           padding: 10px 50px;
           margin-bottom: 0px;
+
+          label {
+            @include uni;
+            line-height: 25px;
+          }
+
+          .hint {
+            @include uni;
+            margin-top: 5px;
+            color: $grey6;
+            font-size: 0.8em;
+          }
+
+          .bitbtn {
+            margin-top: 30px;
+            background: $blue;
+
+            &:hover {
+              background: $dark-blue;
+            }
+          }
         }
 
       } // @apply-now

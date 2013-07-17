@@ -101,35 +101,44 @@
           %a.apply-now{onClick: "levelUp.animation.showApplication()"}
             %span Apply Now
 
-          %form#form.hide{type: "post", action: "/sign-up"}
+          %form#form.hide{action: "http://thoughtworks.us7.list-manage1.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=81c76f0a6d", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
 
-            - inputs = [{:text => "First Name", :name => "name", :type => "text"},
-                        {:text => "Last Name", :name => "surname", :type => "text"},
-                        {:text => "Email Address", :name => "email", :type => "text"},
-                        {:text => "Phone Number", :name => "phone", :type => "text"},
-                        {:text => "What best describes your software design experience", :name => "experience", :type => "textarea"},
-                        {:text => "In 150 words or less, tell us why you should be picked?", :name => "why", :type => "textarea"}]
+            - inputs = [{:text => "First Name", :name => "FNAME"},
+                        {:text => "Last Name", :name => "LNAME"},
+                        {:text => "Email Address", :name => "EMAIL"},
+                        {:text => "Phone Number", :name => "PHONE"}]
 
             - inputs.each do |field|
               .row-fluid
                 .span5.right-align
-                  #{field[:text]}
-                .span7
-                  - if field[:type] == "text"
-                    %input.span10{id: field[:name], name: field[:name], type: "text"}
-                  - if field[:type] == "textarea"
-                    %textarea.span10{id: field[:name], name: field[:name], type: "text"}
+                  %label{for: field[:name]}= field[:text]
+
+                .span5
+                  %input.span10{id: field[:name], name: field[:name], type: "text"}
+
+            .row-fluid
+              .span5.right-align
+                %label{for: "EXPERIENCE"} Focus / Experience
+
+              .span5
+                :plain
+                  <select name="EXPERIENCE" class="required" id="EXPERIENCE">
+                    <option value="Developer">Developer</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Project Manager">Project Manager</option>
+                    <option value="Other">Other</option>
+                  </select>
+
+                .hint
+                  What best describes your experience or interest in software projects?
+
 
             .row-fluid
               .span5
                 #nothing
-              .span7
-                %button.btn.btn-warning{type: "submit"}
+              .span5
+                %button.bitbtn.btn-primary{type: "submit"}
                   Sign Up
-                %button.btn.btn-danger{type: "button", onClick: "levelUp.animation.hideApplication()"}
-                  Cancel
-
-
 
     #ground
       .grass
