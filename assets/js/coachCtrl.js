@@ -39,7 +39,7 @@ function coachLeftCtrl($scope) {
         {
             name: "Andrew Jones",
             title: "Software Developer",
-            image: "/assets/img/coaches/AndrewJones.jpg",
+            image: "/assets/img/coaches/andrewjones.jpg",
             blurb: "<p>Specialties:Software development, GNU/Linux systems administration, web development.</p>"
         },
         {
@@ -81,9 +81,9 @@ function coachRightCtrl($scope) {
         },
         {
             name: "Cassandra Hill",
-            title: "Batman",
+            title: "Test Ninja",
             image: "http://placekitten.com/150/134",
-            blurb: "<p>Hey now hey now</p>"
+            blurb: "<p>iOS & Mobile testing ninja - Close friends with Frank and even an acquaintance with Windows 8 apps. </p>"
         },
         {
             name: "Kate Wilson",
@@ -111,9 +111,9 @@ function coachRightCtrl($scope) {
         },
         {
             name: "Keith Wale",
-            title: "Batman",
+            title: "Mr",
             image: "/assets/img/coaches/KeithWale.jpg",
-            blurb: "<p>Hey now hey now</p>"
+            blurb: "<p>General stuff person. From testing to story elaboration to automated testing. Liker of mobile delivery and automated deployment. Disliker of detailed requirements documents and enterprise architects</p>"
         },
         {
             name: "Khali Young",
