@@ -40,13 +40,13 @@ function coachLeftCtrl($scope) {
             name: "Andrew Jones",
             title: "Software Developer",
             image: "/assets/img/coaches/andrewjones.jpg",
-            blurb: "<p>Specialties:Software development, GNU/Linux systems administration, web development.</p>"
+            blurb: "<p>A self-taught developer, Andrew is comfortable working with infrastructure, on the front-end or anywhere in-between. Since joining ThoughtWorks, Andrew has worked with non-profits and startups. Andrew is a passionate activist and tinkerer of games and robots.</p>"
         },
         {
             name: "Leonor Salazar",
-            title: "Software Developer",
+            title: "Tester",
             image: "/assets/img/coaches/LeonorSalazar.jpg",
-            blurb: "<p>Specialties:Software development, GNU/Linux systems administration, web development.</p>"
+            blurb: "<p>Questioner of everything. Patience with some things, impatient with wasting time</p>"
         },
         {
             name: "Alex Gibson",
@@ -93,15 +93,15 @@ function coachRightCtrl($scope) {
         },
         {
             name: "Peter Budd",
-            title: "Batman",
+            title: "Developer",
             image: "/assets/img/coaches/PeterBudd.jpg",
-            blurb: "<p>Teemo is a legend among his yordle brothers and sisters in Bandle City. As far as yordles are concerned, there is something just slightly off about him. While Teemo enjoys the companionship of other yordles, he also insists on frequent solo missions in the ongoing defense of Bandle City. Despite his genuinely warm personality, something switches off inside Teemo's mind during combat so that the lives he must end while on patrol do not burden him.</p>"
+            blurb: "<p>Web based dev happy, magic frameworks sad. Otherwise - Singing, gaming.</p>"
         },
         {
             name: "Evgeny Dudin",
-            title: "Batman",
+            title: "Maniac Developer ",
             image: "/assets/img/coaches/EvgenyDudin.jpg",
-            blurb: "<p>Hey now hey now</p>"
+            blurb: "<p>After studying physics and cryptology in a country far far away had almost 7 years of experience in software development: from mobile apps and games,  to Linux kernel, websites, and enterprise systems. Obsessed with making software better. Allergic to spaghetti code.</p>"
         },
         {
             name: "Inny So",
