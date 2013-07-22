@@ -117,9 +117,9 @@ function coachRightCtrl($scope) {
         },
         {
             name: "Khali Young",
-            title: "Batman",
+            title: "Many, many, many things",
             image: "http://placekitten.com/150/134",
-            blurb: "<p>Hey now hey now</p>"
+            blurb: "<p>Khali has worked as a programer, business analyst, iteration and project manager, coach and adviser. He is passionate about learning, communicating, developing people and spreading powerful ideas. In his spare time you'll catch him playing with his kids, playing drums and reading strange self-development and philosophical works</p>"
         },
         {
             name: "Marina Chiovetti",
@@ -130,7 +130,7 @@ function coachRightCtrl($scope) {
         {
             name: "Mary-Anne Cosgrove (Mac)",
             title: "Senior Developer",
-            image: "/assets/img/coaches/MarinaChiovetti.jpg",
+            image: "http://placekitten.com/150/134",
             blurb: "<p>Mary-Anne has over 20 years of development experience. She is passionate about automated testing and software design using object oriented design and analysis patterns. She loves taking up the challenge of learning a new language or framework. She is also an excellent communicator and enjoys mentoring other developers.</p>"
         },
         {
