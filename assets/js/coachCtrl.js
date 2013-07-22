@@ -82,14 +82,14 @@ function coachRightCtrl($scope) {
         {
             name: "Cassandra Hill",
             title: "Test Ninja",
-            image: "http://placekitten.com/150/134",
+            image: "/assets/img/coaches/casshill.jpg",
             blurb: "<p>iOS & Mobile testing ninja - Close friends with Frank and even an acquaintance with Windows 8 apps. </p>"
         },
         {
             name: "Kate Wilson",
-            title: "Batman",
+            title: "Graduate Business Analyst",
             image: "/assets/img/coaches/KateWilson.jpg",
-            blurb: "<p>Hey now hey now</p>"
+            blurb: "<p>Kate joined ThoughtWorks in February 2013 as a Graduate Business Analyst. She graduated from the University of Sydney last year with a Bachelor of Commerce in Business Information Systems. After discovering ThoughtWorks at an Agile conference in 2011, she quickly put TW on her list of long term career goals, only to find herself on the graduate program a couple years later, sharing cosy rickshaw rides with fellow grads at TWU. Kate also likes pina coladas and getting caught in the rain. And finds writing about herself in third person kind of weird and thinks it makes her sound like Elmo.</p>"
         },
         {
             name: "Peter Budd",
@@ -130,7 +130,7 @@ function coachRightCtrl($scope) {
         {
             name: "Mary-Anne Cosgrove (Mac)",
             title: "Senior Developer",
-            image: "http://placekitten.com/150/134",
+            image: "/assets/img/coaches/Mac.jpg",
             blurb: "<p>Mary-Anne has over 20 years of development experience. She is passionate about automated testing and software design using object oriented design and analysis patterns. She loves taking up the challenge of learning a new language or framework. She is also an excellent communicator and enjoys mentoring other developers.</p>"
         },
         {
