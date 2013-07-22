@@ -75,9 +75,9 @@ function coachRightCtrl($scope) {
         },
         {
             name: "Sam Newman",
-            title: "Batman",
+            title: "Principal Consultant",
             image: "/assets/img/coaches/SamNewman.jpg",
-            blurb: "<p>Hey now hey now</p>"
+            blurb: "<p>Sam has worked with a variety of companies in both delivery and enablement roles, but tends to prefer the more complex technical challenges over coaching roles. He has written articles for O'Reilly, presented at conferences, and sporadically commits to open source projects. Principally a Java developer, he also spends lots of time with Scala, Python, Javascript.</p>"
         },
         {
             name: "Cassandra Hill",
