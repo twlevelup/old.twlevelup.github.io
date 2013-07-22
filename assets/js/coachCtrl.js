@@ -28,7 +28,7 @@ function coachLeftCtrl($scope) {
             name: "James Gregory",
             title: "Senior Consultant at ThoughtWorks",
             image: "/assets/img/coaches/JamesGregory.jpg",
-            blurb: "<p>Code monkey. Breaker, fixer, do'er.</p>"
+            blurb: "<p>Life long computer nerd. Completely unqualified to be working in this industry. Entirely self taught. Never stopped learning. A brief history of James:Built a computer at 10 (notorious child for constantly stealing parts out of any computer I could get my hands on). Few years later, taught myself to write HTML and build static websites, sold a couple of those to local businesses. Flunked out of school at 16 for spending too much time coding and building levels for computer games. Took a job at a supermarket, taught myself a proper programming language sat in my car on lunch breaks. Quit. First developer job at 19. Whirlwind. Ended up in Australia.</p>"
         },
         {
             name: "Julian Parry",
@@ -46,13 +46,13 @@ function coachLeftCtrl($scope) {
             name: "Leonor Salazar",
             title: "Tester",
             image: "/assets/img/coaches/LeonorSalazar.jpg",
-            blurb: "<p>Questioner of everything. Patience with some things, impatient with wasting time</p>"
+            blurb: "<p>Mexican chaos monkey. Questioner of everything. Patient with some things, impatient with many</p>"
         },
         {
             name: "Alex Gibson",
-            title: "Batman",
+            title: "Leadership Development",
             image: "/assets/img/coaches/AlexGibson.jpg",
-            blurb: "<p>Hey now hey now</p>"
+            blurb: "<p>We are all leaders. When we pair, when we make an idea a reality, when we have impact in any way with the people around us. I've been encouraging innovation and supporting the growth of people for 3.5 years at ThoughtWorks and for 7 before that.I manage development plans for graduate consultants through to the ThoughtWorks MD's and senior leadership teams. All journey's are as fun and rewarding as each other. Specialities: feedback, communication, coaching, finding the fun in everything, singing, dancing, sleeping in until the early afternoon :-)</p>"
         },
         {
             name: "Sam Gibson",
@@ -126,6 +126,12 @@ function coachRightCtrl($scope) {
             title: "Batman",
             image: "/assets/img/coaches/MarinaChiovetti.jpg",
             blurb: "<p>Hey now hey now</p>"
+        },
+        {
+            name: "Mary-Anne Cosgrove (Mac)",
+            title: "Senior Developer",
+            image: "/assets/img/coaches/MarinaChiovetti.jpg",
+            blurb: "<p>Mary-Anne has over 20 years of development experience. She is passionate about automated testing and software design using object oriented design and analysis patterns. She loves taking up the challenge of learning a new language or framework. She is also an excellent communicator and enjoys mentoring other developers.</p>"
         },
         {
             name: "Pete Chemsripong",
