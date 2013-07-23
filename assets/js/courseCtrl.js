@@ -37,7 +37,7 @@ function programCtrl($scope) {
     },
     {
       week: "Week 3",
-      summary: "Testing fundamentals / User testing",
+      summary: "Testing fundamentals",
       description: "Quality software is about more than just great code. From unit testing to user testing, we'll teach you the value of a test first philosophy, and show you how to put it into practice. Not a tester? Yes you are! Ensuring quality is <strong>everyone's</strong> responsibility.",
       preReading: [
         {
@@ -56,7 +56,7 @@ function programCtrl($scope) {
     },
     {
       week: "Week 4",
-      summary: "Continuous Integration / Continuous Design / Continuous Delivery",
+      summary: "Continuous Integration / Continuous Delivery",
       description: "Fail fast! This week is all about integration and deployment, and why both should happen as often as possible. ",
       preReading: [
         {

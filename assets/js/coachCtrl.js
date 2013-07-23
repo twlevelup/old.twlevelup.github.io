@@ -15,7 +15,7 @@ function coachLeftCtrl($scope) {
         {
             name: "Sam Massey",
             title: "Grad Recruiter / Actor / Writer / Thought wanderer and keeper of the peace",
-            image: "/assets/img/coaches/SamMassey.jpg",
+            image: "/assets/img/coaches/Sammassey.jpg",
             blurb: "<p>Speaking at this year's AAGE annual conference about why we became no.1 grad employer in Australia...I'm still figuring it out!</p> <p>Grew up in a teen weeny village in England. Trained as an actor, got paid for 10 years to speak Shakespeare and entertain people, became a writer, joined ThoughtWorks London part-time in 2010, loved it, became grad recruiter in Oz in 2013, loved it even more. Still write/film stuff in my spare time. Lover of football (the European kind). Photographer and ocean swimmer. </p>"
         },
         {
