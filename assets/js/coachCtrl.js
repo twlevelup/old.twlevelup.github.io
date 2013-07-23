@@ -31,12 +31,6 @@ function coachLeftCtrl($scope) {
             blurb: "<p>Life long computer nerd. Completely unqualified to be working in this industry. Entirely self taught. Never stopped learning.</p> <p>A brief history of James:Built a computer at 10 (notorious child for constantly stealing parts out of any computer I could get my hands on). Few years later, taught myself to write HTML and build static websites, sold a couple of those to local businesses.</p> <p>Flunked out of school at 16 for spending too much time coding and building levels for computer games. Took a job at a supermarket, taught myself a proper programming language sat in my car on lunch breaks. Quit. First developer job at 19. Whirlwind. Ended up in Australia.</p>"
         },
         {
-            name: "Julian Parry",
-            title: "Batman",
-            image: "/assets/img/coaches/JulianParry.jpg",
-            blurb: "<p>Hey now hey now</p>"
-        },
-        {
             name: "Andrew Jones",
             title: "Software Developer",
             image: "/assets/img/coaches/andrewjones.jpg",
@@ -56,9 +50,9 @@ function coachLeftCtrl($scope) {
         },
         {
             name: "Sam Gibson",
-            title: "Man of American Steel",
+            title: "Wayward Developer",
             image: "/assets/img/coaches/sam-gibson.jpg",
-            blurb: "<p>My Little Pony is an entertainment franchise developed by Hasbro which is marketed primarily to girls. It started as a line of plastic pony toys developed by Bonnie Zacherle, Charles Muenchinger and Steve D'Aguanno which have been produced since 1983.</p> <p>As a result of these qualities, Friendship Is Magic has not only proven a major success in its intended demographics,[6] but also unexpectedly gained significant followings in peripheral ones, such as teen and adult males. The show has also attracted media coverage for its fanbase, which has spawned numerous adult-themed parodies, mashups, and images, mostly outside its main target audience, especially seen on YouTube and DeviantArt.</p>"
+            blurb: "<p></p>"
         }
 
     ];
