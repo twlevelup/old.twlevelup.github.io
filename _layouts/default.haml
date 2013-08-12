@@ -4,11 +4,10 @@
     %title LevelUp - Go Beyond the Textbook
     %meta{name: "description", content: "The LevelUp program takes you above and beyond regular textbook learning. Designed to equip participants with skills and knowledge needed to bridge the gap between university and working life."}
     %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400', rel: 'stylesheet', type: 'text/css'}
-    %link{rel: "stylesheet", href: "assets/css/bootstrap.css"}
-    %link{rel: "stylesheet", href: "assets/css/main.css"}
+    %link{rel: "stylesheet", href: "/assets/css/bootstrap.css"}
+    %link{rel: "stylesheet", href: "/assets/css/main.css"}
 
-    %script{type: "text/javascript", src: "assets/js/animations.js"}
-    %script{type: "text/javascript", src: "assets/js/jquery-2.0.3.min.js"}
+    %script{type: "text/javascript", src: "/assets/js/jquery-2.0.3.min.js"}
 
   %body
     .top-alert
@@ -19,13 +18,16 @@
 
     #sky
       .sky
+      {% if page.hills %}
       .hill-back
       .hill-front
+      {% endif %}
       .cloud
       .container
         %header.header.row
-          .left{onClick: "levelUp.animation.hideApplication()"}
-            %img{src: "assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
+          .left
+            %a{href: "/"}
+              %img{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
 
           %ul.nav.nav-pills
             %li
@@ -38,166 +40,23 @@
               %a{href: "/events"}
                 Past Events
 
-        #hero.row
-          %h1
-            LEVELUP 
-            %strong TWO
-
-          %h2
-            Essential skills for future technologists
-
-          %h3
-            The LevelUp program bridges the gap between what is
-            taught at University, and what happens on the ground in software
-            projects. Learn essential skills from people who do this not just
-            %em for
-            a living, but as a living.
-
-          #what-is-levelup.row
-            .span6
-              %p
-                LevelUp 2 will run every 
-                %strong Tuesday night
-                from 
-                %strong 6pm to 9pm
-                for
-                %strong 9 weeks,
-                starting on
-                %strong August 20th.
-                We'll be working from the
-                %strong ThoughtWorks Sydney
-                office in the CBD.
-                %strong
-                  %a{href: "https://maps.google.com.au/maps?q=Level+8,+51+Pitt+St,+Sydney,+NSW&hnear=8%2F51+Pitt+St,+Circular+Quay,+Sydney+New+South+Wales+2000&t=m&z=16"} Level 8, 51 Pitt St, Sydney.
-
-              %p
-                Over 9 weeks, you'll deliver a project from start to finish,
-                guided by highly experienced professionals. We'll teach you
-                everything you need to know along the way, from planning and
-                design to writing and testing your own code. At the end you
-                won't just walk away with working software for your portfolio -
-                you'll have knowledge, skills and experience to hit the ground
-                running in the workplace.
-
-              %p
-
-            .span6
-              %p
-                Availability for the upcoming semester is strictly limited,
-                with only
-                %strong 25 spaces available. 
-                Applications are open now!
-
-              %p
-                Your guides on the journey will be the best software
-                professionals around - delivering software by
-                day - teaching you by night. 
-
-        #application.row
-          %a.apply-now
-            %span Apply Now
-
-          %form#form{action: "http://thoughtworks.us7.list-manage1.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=81c76f0a6d", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
-
-            - inputs = [{:text => "First Name", :name => "FNAME"},
-                        {:text => "Last Name", :name => "LNAME"},
-                        {:text => "Email Address", :name => "EMAIL"},
-                        {:text => "Phone Number", :name => "PHONE"}]
-
-            - inputs.each do |field|
-              .row-fluid
-                .span5.right-align
-                  %label{for: field[:name]}= field[:text]
-
-                .span5
-                  %input.span10{id: field[:name], name: field[:name], type: "text"}
-
-            .row-fluid
-              .span5.right-align
-                %label{for: "EXPERIENCE"} Focus / Experience
-
-              .span5
-                :plain
-                  <select name="EXPERIENCE" class="required" id="EXPERIENCE">
-                    <option value="Developer">Developer</option>
-                    <option value="Designer">Designer</option>
-                    <option value="Project Manager">Project Manager</option>
-                    <option value="Other">Other</option>
-                  </select>
-
-                .hint
-                  What best describes your experience or interest in software projects?
-
-
-            .row-fluid
-              .span5
-                #nothing
-              .span5
-                %button.bitbtn.btn-primary{type: "submit"}
-                  Sign Up
+        {{ content }}
 
     #ground
       .grass
       .ground
       .container
-        #coaches.row
-          .span3
-            %h2 Coaches
-            %a.bitbtn.btn-secondary{href: "/coaches"} More coaches
-          .span9
-            .row
-              .blurb
+        {{ page.ground | haml }}
 
-                %p
-                  LevelUp coaches include published authors, noted speakers,
-                  and technology revolutionaries. Above all, they're software
-                  sorcerers, project ninjas and agile advocates.
-
-                %p
-                  Here's a little bit about some of the people you'll be working with.
-
-            .row
-              - coaches = [{:link => "/coaches", :src => "assets/img/coaches/darren.jpg", :name => "Darren Smith", :description => "Over 18 years experience in the IT industry, across Australia, China, USA and Canada."},
-                           {:link => "/coaches", :src => "assets/img/coaches/MarinaChiovetti.jpg", :name => "Marina Chiovetti", :description => "Marina does lots of stuff for clients. Helping them work better, smarter and pretty often, shake them up."},
-                           {:link => "/coaches", :src => "assets/img/coaches/AngusIrvine.jpg", :name => "Angus Irvine", :description => "Agile Business Analyst with considerable experience in web projects across both the commercial product and business application spaces."}]
-
-              - coaches.each do |coach|
-                .span3.person
-                  %a.bit{href: coach[:link]}
-                    %img{src: coach[:src], title: coach[:name]}
-                    %span #{coach[:name]}
-                  %p #{coach[:description]}
-
-
-
+    {% if page.water %}
     #water
       .wave
       .water
       .seaweed
       .bubbles
       .container
-        #events.row
-          .span3
-            %h2 Past events
-            %a.bitbtn.btn-secondary{href: "/events"} More events
-          .span9
-            - past_events = [{:link => "/events", :title => "LevelUp EXP", :date => "22 June 2013", :image => "assets/img/events/lvlxp-1.jpg", :image_title => "LevelUp EXP", :quotes => [{:quote => "Good to know what's actually happening outside of Uni", :person => "LevelUp EXP Attendee"},
-                                                                                                                                                                                          {:quote => "Thank you ThoughtWorks for taking time on a weekend of conducting an insightful and very helpful session", :person => "LevelUp EXP Attendee"},
-                                                                                                                                                                                          {:quote => "Inspiring", :person => "LevelUp EXP Attendee"}]},
-                             {:link => "/events", :title => "LevelUp One", :date => "12 March 2013", :image => "assets/img/events/lvlone-2.jpg", :image_title => "LevelUp One", :quotes => [{:quote => "Great coverage of a broad topic. I didn't know what to expect at first & was greatly impressed with ThoughtWorker's ability to impart knowledge", :person => "LevelUp One Student"},
-                                                                                                                                                                                            {:quote => "Well fed; chillaxed nature", :person => "LevelUp One Student"}]}]
-
-            .row-fluid
-              - past_events.each do |event|
-                .span6.event
-                  %h4
-                    %a{href: event[:link]}
-                      %span.bit #{event[:title]}
-                      %span.date : #{event[:date]}
-                      %img{src: event[:image], title: event[:image_title]}
-                  - event[:quotes].each do |quote|
-                    .blockquote
-                      &ldquo;#{quote[:quote]}&rdquo;
+        {{ page.water | haml }}
+    {% endif %}
 
     %footer.footer
       .blueblock
