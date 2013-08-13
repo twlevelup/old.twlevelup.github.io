@@ -56,9 +56,6 @@ body {
           }
           &:hover, &:active {
             text-decoration: none;
-            span {
-              color: #fff799;
-            }
           }
         }
         #form {
@@ -80,7 +77,9 @@ body {
           }
 
           .bitbtn {
+            font-size: 30px;
             margin-top: 30px;
+            margin-bottom: 30px;
             background: $blue;
 
             &:hover {

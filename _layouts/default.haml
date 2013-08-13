@@ -10,11 +10,13 @@
     %script{type: "text/javascript", src: "/assets/js/jquery-2.0.3.min.js"}
 
   %body
+    {% if page.banner != false %}
     .top-alert
       %p
         LevelUp Two starts at 6pm August 20th, 2013 @
         %a{href: "https://maps.google.com.au/maps?q=Level+8,+51+Pitt+St,+Sydney,+NSW&hnear=8%2F51+Pitt+St,+Circular+Quay,+Sydney+New+South+Wales+2000&t=m&z=16"}
           ThoughtWorks Sydney
+    {% endif %}
 
     #sky
       .sky
@@ -36,6 +38,7 @@
             %li
               %a{href: "/coaches"}
                 Coaches
+
             %li
               %a{href: "/events"}
                 Past Events

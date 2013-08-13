@@ -12,6 +12,29 @@ a {
   }
 }
 
+.dots {
+  margin-top: 40px;
+  list-style-image: url("/assets/img/page-structure/course/dot.png");
+  margin-left: 50px;
+
+  h4 {
+    @include uni;
+    font-weight: bold;
+    font-size: 24px;
+    vertical-align: top;
+    line-height: 32px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  li {
+    margin-bottom: 30px;
+  }
+}
+
 .bitbtn {
   background: $bit;
   @include uni;

@@ -1,0 +1,57 @@
+---
+layout: default
+banner: false
+hills: true
+---
+
+#hero.row
+  %h1
+    LEVELUP
+    %strong EXP
+
+  %ul.dots.when-where-why
+    %li
+      %h4 What?
+      %p
+        %strong LevelUp EXP
+        is a unique one day conference to prepare university students
+        interested in technology to enter the workforce. It brings together
+        students with professional technical visionaries and engineers on the
+        forefront of technology to discuss techniques and trends that help get
+        you prepared to enter the workforce.
+
+    %li
+      %h4 When?
+      %p
+        14 September 2013
+
+    %li
+      %h4 Where?
+      %p
+        %a{href: "https://maps.google.com.au/maps?q=Level+14,+303+Collins+Street,+Melbourne,+3000+VIC&hnear=14%2F303+Collins+St,+Melbourne+Victoria+3000&gl=au&t=m&z=16"}
+          ThoughtWorks Melbourne
+
+#application.row
+  %a.apply-now
+    %span Register
+
+  %form#form{action: "http://gradlevelup.us7.list-manage2.com/subscribe/post?u=e01f405fabad2dd5617122558&id=250fada2ad", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
+
+    - inputs = [{:text => "First Name", :name => "FNAME"},
+                {:text => "Last Name", :name => "LNAME"},
+                {:text => "Email Address", :name => "EMAIL"}]
+
+    - inputs.each do |field|
+      .row-fluid
+        .span5.right-align
+          %label{for: field[:name]}= field[:text]
+
+        .span5
+          %input.span10{id: field[:name], name: field[:name], type: "text"}
+
+    .row-fluid
+      .span5
+        #nothing
+      .span5
+        %button.bitbtn.btn-primary{type: "submit"}
+          Submit
