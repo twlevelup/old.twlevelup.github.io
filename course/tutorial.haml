@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+#course.row
+  .top
+  .mid
+    .row
+      %h1 Let's write some code
+      .acceptance-criteria
+        %h3 The problem:
+        %h4
+          As a player, I want to add an obstacle to the 
+          game map so that I have something to avoid.
+        %p
+          Our acceptance criteria (the criteria we use to 
+          know when we're done) looks like:
+          %ol
+            %li
+              Given that my character moves towards an obstacle in
+              any direction
+              %br
+              When it hits the obstacle
+              %br
+              Then my character stops moving
+            %li
+              Given there are two obstacles on the screen
+              %br
+              And there is not enough space between them for the
+              character to pass through
+              %br
+              When I move my character between the obstacles
+              %br
+              Then my character should pass between them
+
+    .row.week
+      .span12
+        .header
+          %h3 So, what do we do first?
+          %img{src: "/assets/img/page-structure/course/dot.png"}
+        .step-content
+          %p
+            Let's have a think about how we're going to approach the problem:
+          %ul
+            %li
+              We have to add an obstacle
+            %li
+              We need to detect when the player hits the obstacle
+            %li
+              We need to somehow stop the player from moving through the obstacle.
+          %p
+            Lucky for us, the collision detection is already done.
+            That just means we have to worry about stopping the player,
+            and adding an actual obstacle.
+          %p
+            Let's tackle stopping the player first.
+    .row.week
+      .span12
+        .header
+          %h3 Testing first
+          %img{src: "/assets/img/page-structure/course/dot.png"}
+  .bot
