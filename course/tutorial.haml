@@ -10,11 +10,11 @@ layout: default
       .acceptance-criteria
         %h3 The problem:
         %h4
-          As a player, I want to add an obstacle to the 
+          As a player, I want to add an obstacle to the
           game map so that I have something to avoid.
         %p
-          Our acceptance criteria (the criteria we use to 
-          know when we're done) looks like:
+          Our acceptance criteria (the criteria we use to
+          know when we're done) looks like this:
           %ol
             %li
               Given that my character moves towards an obstacle in
@@ -36,6 +36,27 @@ layout: default
     .row.week
       .span12
         .header
+          %h3 Let's TDD!
+          %img{src: "/assets/img/page-structure/course/dot.png"}
+        .step-content
+          %p
+            Our basic approach when writing code using Test Drived Development
+            can be summed up as the red, green, refactor cycle. First we think
+            about what we're trying to do and break it down into the smallest
+            possible chunks. Starting with the first bit, we write a test for it.
+            The test will fail (red). Then we write
+            %em just enough
+            code to make the test pass (green). It is really important only to write
+            enough to make the tests pass. Once we've got our tests passing, then we
+            can safely refactor our new code knowing we will know if we've broken it.
+            After this we can move on to the next of the small chunks of
+            functionality and repeat the process.
+          %p
+            It'll make more sense when we start doing it, so let's put it into action!
+
+    .row.week
+      .span12
+        .header
           %h3 So, what do we do first?
           %img{src: "/assets/img/page-structure/course/dot.png"}
         .step-content
@@ -47,16 +68,551 @@ layout: default
             %li
               We need to detect when the player hits the obstacle
             %li
-              We need to somehow stop the player from moving through the obstacle.
+              We need to prevent the player from moving through the obstacle.
           %p
             Lucky for us, the collision detection is already done.
             That just means we have to worry about stopping the player,
             and adding an actual obstacle.
           %p
             Let's tackle stopping the player first.
+          %p
+            There are a few different ways to stop the player:
+            %ul
+              %li
+                We could set a flag to block movement in a certain direction
+                but this will require us to know on which side the collision
+                is occuring - this will require us to rewrite our collision
+                detection system. Let's go for something that will meet our
+                requirements with much less work.
+              %li
+                The simplest way to block the player when they collide with
+                an obstacle, is to move them back to the last coordinates before the
+                collision - if the game loop is running quickly, then the
+                player won't even notice their character jumping back and forth.
+
+          %p
+            So what do we need for this? First, we need to store the last position, and
+            then we need to move the player on a collision.
+          %p
+            Now that we've broken our task know what we need, let's write a test!
+
     .row.week
       .span12
         .header
           %h3 Testing first
           %img{src: "/assets/img/page-structure/course/dot.png"}
+        .step-content
+          .code
+            :markdown
+                  -- spec/player_spec.lua:59
+
+                  describe("lastPosition", function()
+                      it("should store the last position before moving vertically", function()
+                          orig_x = 10
+                          orig_y = 10
+                          local player = Player:new(
+                              mock_input('up'),
+                              {
+                                  x = orig_x,
+                                  y = orig_y,
+                                  speed = 1
+                              }
+                          )
+                          player:update(dt)
+
+                          assert.are.same(player.lastPosition, {x = orig_x, y = orig_y})
+                      end)
+                  end)
+
+          %p
+            What we're actually trying to test is that if we put the player at a coordinate and then
+            move it one unit, that the player keeps track of its last position.
+
+          %p
+            In this test, we set up what we need by creating our player
+            with a mocked 'up' input command, and x and y values. Then we tell the player to
+            update itself. Finally we make an assertion that the player's last position is
+            its original position.
+
+          %p
+            Now the test is written, you should run the test suite to see the test fail.
+
+          .code
+            :markdown
+                  $ busted
+
+                  ++++++++++x++++++++++++++
+                  24 successes, 1 failure, and 0 pending in 0.005651 seconds.
+
+                  Failure ./spec/player_spec.lua @ 60
+                  should store the last position before moving vertically
+                  ./spec/player_spec.lua:73: attempt to call field 'lastPosition' (a nil value)
+
+          %p
+            You'll see an error message something like the one above (or perhaps something about
+            attempting to index a nil value). Both messages just mean the table index you're
+            trying to look up doesn't exist). We're looking for a test failure, but this is the
+            wrong kind of failure, so let's fix it up.
+          %p
+            All we need to do to get this test failing in the right way is to add in the
+            %em lastPosition
+            indicies onto the Player class.
+
+          .code
+            :markdown
+                    -- player.lua:40
+
+                    newPlayer.lastPosition = {
+                        x = nil,
+                        y = nil
+                    }
+
+          %p
+            Now if we run busted again we should see a different error message.
+
+          .code
+            :markdown
+                    $ busted
+
+                    +++++++++++x+++++++++++++
+                    23 successes, 1 failure, and 0 pending in 0.005475 seconds.
+
+                    Failure: ./spec/player_spec.lua @ 60
+                    should store the last position before moving vertically
+                    ./spec/player_spec.lua:73: Expected objects to be the same. Passed in:
+                    (table): {
+                      [y] = 10
+                      [x] = 10 }
+                    Expected:
+                    (table): { }
+
+          %p
+            Our test isn't crashing, and busted is telling us that our actual output
+            doesn't match our expected output. Now we can make it pass!
+
+          .code
+            :markdown
+                  -- player.lua:71
+
+                  function Player:update(dt)
+                      ...
+
+                      # line 101
+                      self.lastPosition = {
+                          y = self.y
+                      }
+
+                      ...
+                  end
+          %p
+            And now if we run our tests:
+
+          .code
+            :markdown
+                  $ busted
+
+                  +++++++++++++++++++++++++
+                  25 successes, 0 failures, and 0 pending in 0.004932 seconds.
+
+          %p
+            Great! We're on our way. Now let's add another test to cover moving
+            in a horizonal direction. We'll put it in the same describe block.
+
+          .code
+            :markdown
+                  -- spec/player_spec:59
+
+                  describe("lastPosition", function()
+                    it("should store the last position before moving vertically", function()
+                        ...
+                    end)
+
+                    # line 76
+                    it("should store the last position before moving horizonally", function()
+                        orig_x = 10
+                        orig_y = 10
+                        local player = Player:new(
+                            mock_input('left'),
+                            {
+                                x = orig_x,
+                                y = orig_y,
+                                speed = 1
+                            }
+                        )
+                        player.graphics.animation = mock_animation()
+
+                        player:update(dt)
+
+                        assert.are.same(player.lastPosition, {x = orig_x, y = orig_y})
+                    end)
+                  end)
+
+          %p
+            The main difference with this test is that we need to mock out the
+            player's animation since it is called when we change horizontal
+            direction. Given our implementation, this test should already pass,
+            but we add it for completeness.
+
+          %p
+            Now that a player can keep track of its last position we can move it
+            back to that position if it collides with something.
+
+    .row.week
+      .span12
+        .header
+          %h3 Collision course
+          %img{src: "/assets/img/page-structure/course/dot.png"}
+        .step-content
+          %p
+            Our collision detection system (see main.lua:25 and entity.lua:30)
+            will already tell us when the player has hit something. All we need
+            to do is code what should happen when the player hits something. So,
+            as usual, let's write a test.
+
+          .code
+            :markdown
+                  -- spec/player_spec:143
+
+                  describe("collide", function()
+                      it("should move the player to its last position when colliding on the left side, function()
+                          player = Player:new({})
+                          player.size = {
+                              x = 10,
+                              y = 10
+                          }
+                          player.lastPosition = {x = 21, y = 10}
+                          player.x = 20
+                          player.y = 10
+                          player.graphics.animation = mock_animation()
+
+                          collidingEntity = Entity:new({})
+
+                          player:collide(collidingEntity)
+
+                          assert.is.equal(player.x, 21)
+                          assert.is.equal(player.y, 10)
+                      end)
+                  end)
+
+          %p
+            Here, we're setting up our preconditions: a player with a
+            known last postion, and an entity for it to collide with.
+            Next, we collide our new player with the entity. And finally
+            we assert that our player was moved back to its last position.
+
+          %p
+            If we run our tests now, busted will complain about the
+            player:collide() function not existing. We'd better add
+            the method to make sure out tests will fail for the right
+            reasons.
+
+          .code
+            :markdown
+                    -- player.lua:66
+
+                    function Player:collide(other)
+                        return nil
+                    end
+
+          .code
+            :markdown
+                    $ busted
+
+                    +++++++++++++++++x+++++++
+                    21 successes, 1 failure, and 0 pending in 0.005732 seconds.
+
+                    Failure: ./spec/player_spec.lua @ 162
+                    should move the player to its last position when colliding on the left side
+                    ./spec/player_spec.lua:170: Expected objects to be equal. Passed in:
+                    (number) 21
+                    Expected:
+                    (number) 20
+
+          %p
+            So, the player isn't being moved back to its last position. Let's make it happen.
+
+          .code
+            :markdown
+                    -- player.lua:66
+
+                    function Player:collide(other)
+                        self.x = self.lastPosition.x
+                    end
+
+          %p
+            This is just enough code to make the tests pass, but won't cover us if we move
+            up or down. So let's write another test.
+
+          .code
+            :markdown
+                    -- spec/player_spec:174
+
+                    it("should move the player to its last position when colliding on the top side", function()
+                        player = Player:new({})
+                        player.size = {
+                            x = 10,
+                            y = 10
+                        }
+                        player.lastPosition = {x = 10, y = 11}
+                        player.x = 20
+                        player.y = 10
+
+                        collidingEntity = Entity:new({})
+
+                        player:collide(collidingEntity)
+
+                        assert.is.equal(player.x, 10)
+                        assert.is.equal(player.y, 11)
+                    end)
+
+          %p
+            Now we run our tests and this new test will fail. Which means we
+            can make it pass.
+
+          .code
+            :markdown
+                    -- player.lua:66
+
+                    function Player:collide(other)
+                        self.x = self.lastPosition.x
+                        self.y = self.lastPosition.y
+                    end
+
+          %p
+            Our tests should all be passing again. Let's have another look at our
+            test code:
+
+          .code
+            :markdown
+                  -- spec/player_spec:143
+
+                  describe("collide", function()
+                      it("should move the player to its last position when colliding on the left side, function()
+                          player = Player:new({})
+                          player.size = {
+                              x = 10,
+                              y = 10
+                          }
+                          player.lastPosition = {x = 21, y = 10}
+                          player.x = 20
+                          player.y = 10
+                          player.graphics.animation = mock_animation()
+
+                          collidingEntity = Entity:new({})
+
+                          player:collide(collidingEntity)
+
+                          assert.is.equal(player.x, 21)
+                          assert.is.equal(player.y, 10)
+                      end)
+
+                      it("should move the player to its last position when colliding on the top side", function()
+                          player = Player:new({})
+                          player.size = {
+                              x = 10,
+                              y = 10
+                          }
+                          player.lastPosition = {x = 10, y = 11}
+                          player.x = 20
+                          player.y = 10
+
+                          collidingEntity = Entity:new({})
+
+                          player:collide(collidingEntity)
+
+                          assert.is.equal(player.x, 10)
+                          assert.is.equal(player.y, 11)
+                      end)
+                  end)
+
+          %p
+            You might notice that we've got some duplicated code here. The instantiation of the
+            player and the collidingEntity are in both tests, so we
+            can move them out into a before_each block which will be run
+            before each test in the current context (our describe("collide") block).
+
+          .code
+            :markdown
+                  -- spec/player_spec:143
+
+                  describe("collide", function()
+                      local player, collidingEntity
+
+                      before_each(function()
+                          player = Player:new({})
+                          player.size = {
+                              x = 10,
+                              y = 10
+                          }
+                          player.x = 20
+                          player.y = 10
+
+                          collidingEntity = Entity:new({})
+                          collidingEntity.x = 10
+                          collidingEntity.y = 10
+                          collidingEntity.size = {
+                              x = 10,
+                              y = 10
+                          }
+                      end)
+
+                      it("should move the player to its last position when colliding on the left side", function()
+                          player.graphics.animation = mock_animation()
+
+                          player.lastPosition = {x = 21, y = 10}
+
+                          player:collide(collidingEntity)
+
+                          assert.is.equal(player.x, 21)
+                          assert.is.equal(player.y, 10)
+                      end)
+
+                      it("should move the player to its last position when colliding on the top side", function()
+                          player.lastPosition = {x = 10, y = 11}
+
+                          player:collide(collidingEntity)
+
+                          assert.is.equal(player.x, 10)
+                          assert.is.equal(player.y, 11)
+                      end)
+                  end)
+
+          %p
+            Our test cases are much cleaner now. At this point we should also run our
+            tests to make sure they still pass.
+
+          %p
+            We still need to add a few more tests for the collide function to cover
+            the other two movement cases - they're similar to the cases we've got already
+            and they should pass without adding more production code. See the latest version
+            of the player spec at line 143.
+
+    .row.week
+      .span12
+        .header
+          %h3 It's alive!
+          %img{src: "/assets/img/page-structure/course/dot.png"}
+        .step-content
+          %p
+            So now we've stopped our player from moving through another entity,
+            and some tests that guarantee that it works. Let's now wire it up
+            to the game itself, so we can see it in action.
+
+          %p
+            First, we'll need something to add to the game. Obstacles are something
+            that we're likely to reuse and and have more specialised behaviour
+            than an entity, so let's make a new class. Let's add a new file in
+            the project root called obstacle.lua.
+
+          .code
+            :markdown
+                  -- obstacle.lua
+
+                  require 'entity'
+
+                  Obstacle = {}
+                  Obstacle.__index = Obstacle
+                  setmetatable(Obstacle, {__index = Entity})
+
+          %p
+            Here we set up our inheritance chain.
+
+          .code
+            :markdown
+                  function Obstacle:new(game, config)
+                      local config = config or {}
+
+                      local newObstacle = Entity:new(game)
+                      newObstacle.type = "obstacle"
+                      newObstacle.x = config.x or 0
+                      newObstacle.y = config.y or 0
+                      newObstacle.size = config.size or {
+                          x = 40,
+                          y = 52
+                      }
+          %p
+            More inheritance and our overrides.
+
+          .code
+            :markdown
+                      newObstacle.graphics = config.graphics or {
+                          source = "assets/images/cactus-sprites.png"
+                      }
+          %p
+            We're setting up the sprite file we want to use for our obstacle.
+
+          .code
+            :markdown
+                      if game.graphics ~=nil and game.animation ~= nil then
+                          newObstacle.graphics.sprites = game.graphics.newImage(newObstacle.graphics.source)
+                          newObstacle.graphics.grid = game.animation.newGrid(
+                              newObstacle.size.x, newObstacle.size.y,
+                              newObstacle.graphics.sprites:getWidth(),
+                              newObstacle.graphics.sprites:getHeight()
+                          )
+                          newObstacle.graphics.animation = game.animation.newAnimation(
+                              newObstacle.graphics.grid("1-2", 1),
+                              0.5
+                          )
+                      end
+          %p
+            This will set up the animation for our sprite. We set up a new grid that is the
+            same size as our obstacle and then the animation itself with 2 frames, starting
+            on the first with each frame lasting for half a second.
+
+          .code
+            :markdown
+                      return setmetatable(newObstacle, self)
+                  end
+
+          %p
+            The last thing we do in our Obstacle:new() is to attach the newObstacle we've
+            just created to the metatable of the Obstacle table. If that doesn't make sense
+            then think of it as more boilerplate that we need to make inheritance work.
+
+          .code
+            :markdown
+                  function Obstacle:update(dt)
+                      if self.graphics.animation ~= nil then
+                          self.graphics.animation:update(dt)
+                      end
+                  end
+
+          %p
+            Finally, we add an update method for the obstacle, which will
+            handle the animation.
+
+          %p
+            Now we've got an obstacle "class", we still need to instatiate it
+            on the game map.
+
+          .code
+            :markdown
+                  -- main.lua:9
+
+                  local obstacle = Obstacle:new(love, {x = 200, y = 200})
+
+                  function love.load()
+                      table.insert(entities, player)
+                      table.insert(entities, obstacle)
+
+                      ...
+
+          %p
+            Now we've got everything we need to display an obstacle on the
+            game map. Run it (love .) to see your new dancing cactus. The player
+            character should not be able to run into it.
+
+          %p
+            At this stage we're passing part one of our acceptance criteria, so
+            I'll leave it as an exercise to modify the code to pass the second
+            part.
+
+          %p
+            Happy coding!
+
+          %p
+            Send any questions or comments to akjones@thoughtworks.com
+
+
   .bot
