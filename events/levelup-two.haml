@@ -1,0 +1,208 @@
+---
+layout: default
+hills: true
+---
+
+
+
+#hero.row
+  %h1
+    LEVELUP 
+    %strong ???
+
+  %h2
+    When ??? / Where ???
+
+  %h3
+    The LevelUp program bridges the gap between what is
+    taught at University, and what happens on the ground in software
+    projects. Learn essential skills from people who do this not just
+    %em for
+    a living, but as a living.
+
+  #what-is-levelup.row
+    .span6
+      %p
+        Blurb. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lectus orci, interdum eu ornare eget, gravida ut dolor. Aenean lobortis tortor non nisl commodo ultricies. Nulla aliquet tellus nunc, nec sodales lorem interdum quis. Ut gravida quam quis sem varius mattis eu quis felis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+      %p
+        Praesent tincidunt dolor quis nibh mollis, ullamcorper pulvinar magna ultricies. Donec pellentesque risus vitae imperdiet commodo. Cras ac tincidunt enim.
+
+      %p
+
+    .span6
+      %p
+        Fusce facilisis, diam at semper tincidunt, massa orci molestie metus, id venenatis tortor lacus vitae nulla. Nam vestibulum in ligula vel tristique. Sed hendrerit purus sem, nec dapibus urna viverra vitae. Morbi non velit dictum lectus fringilla tincidunt. Vestibulum at eros et ante elementum iaculis.
+      %p
+        YIn hac habitasse platea dictumst. Nullam sagittis leo leo. Nulla at ornare massa, id fringilla dui. Quisque blandit viverra rutrum. Vivamus eu adipiscing elit. Donec pellentesque semper velit, vel ultrices nunc interdum eget.
+
+#application.row
+  %a.apply-now
+    %span Apply Now
+
+  %form#form{action: "http://thoughtworks.us7.list-manage1.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=81c76f0a6d", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
+
+    - inputs = [{:text => "First Name", :name => "FNAME"},
+                {:text => "Last Name", :name => "LNAME"},
+                {:text => "Email Address", :name => "EMAIL"},
+                {:text => "Phone Number", :name => "PHONE"}]
+
+    - inputs.each do |field|
+      .row-fluid
+        .span5.right-align
+          %label{for: field[:name]}= field[:text]
+
+        .span5
+          %input.span10{id: field[:name], name: field[:name], type: "text"}
+
+    .row-fluid
+      .span5.right-align
+        %label{for: "EXPERIENCE"} Focus / Experience
+
+      .span5
+        :plain
+          <select name="EXPERIENCE" class="required" id="EXPERIENCE">
+            <option value="Developer">Developer</option>
+            <option value="Designer">Designer</option>
+            <option value="Project Manager">Project Manager</option>
+            <option value="Other">Other</option>
+          </select>
+
+        .hint
+          What best describes your experience or interest in software projects?
+
+
+    .row-fluid
+      .span5
+        #nothing
+      .span5
+        %button.bitbtn.btn-primary{type: "submit"}
+          Sign Up
+
+
+
+
+
+{% ground %}
+#coaches.row
+  .span3
+    %h2 Coaches
+    %a.bitbtn.btn-secondary{href: "/coaches"} More coaches
+  .span9
+    .row
+      .blurb
+
+        %p
+          LevelUp coaches include published authors, noted speakers,
+          and technology revolutionaries. Above all, they're software
+          sorcerers, project ninjas and agile advocates.
+
+        %p
+          Here's a little bit about the people you'll be working with this event.
+
+        %p
+          &nbsp;
+
+    .row
+      - coaches = [{:link => "/coaches", :src => "/assets/img/coaches/darren.jpg", :name => "Darren Smith", :description => "Over 18 years experience in the IT industry, across Australia, China, USA and Canada."},
+                   {:link => "/coaches", :src => "/assets/img/coaches/MarinaChiovetti.jpg", :name => "Marina Chiovetti", :description => "Marina does lots of stuff for clients. Helping them work better, smarter and pretty often, shake them up."},
+                   {:link => "/coaches", :src => "/assets/img/coaches/AngusIrvine.jpg", :name => "Angus Irvine", :description => "Agile Business Analyst with considerable experience in web projects across both the commercial product and business application spaces."}]
+
+      - coaches.each do |coach|
+        .span3.person
+          %a.bit{href: coach[:link]}
+            %img{src: coach[:src], title: coach[:name]}
+            %span #{coach[:name]}
+          %p #{coach[:description]}
+{% endground %}
+
+
+
+
+
+
+
+{% water %}
+
+- programs = [ { week: "Week 1",
+      summary: "Introduction / Agile Fundamentals / Team forming",
+      description: "<p>This could work as a Week thing.... ***Welcome to the program! We'll start by showing you how software development works in the real world - what's good, what's bad, and why we're all about agile. </p> <p>Once we're all grounded, we'll introduce you to the project you'll be working on (spoiler - its a video game), and we'll setup the teams that you'll be delivering in!</p>",
+      pre_readings: [ { link: "http://www.agilemanifesto.org/",
+          title: "The Agile Manifesto",
+        },
+        { link: "http://www.infoq.com/minibooks/scrum-xp-from-the-trenches",
+          title: "Scrum-XP from the trenches",
+        },
+        { link: "http://www.youtube.com/watch?v=4u5N00ApR_k",
+          title: "Want to run an agile project?",
+        } ] },
+    { week: "The Transformation: Grad to Consultant",
+      summary: "14:30 - 15:00 with Elise Aplin & Ryan Tessier",
+      description: "Or per session in a day thing.... ****For those keen on coding we'll show you the ropes for what we will use, and then its time to get your hands dirty. Not a coder? No problem - we'll take you over to the dark side and show you the fundamentals of analysis, design and project management.",
+      pre_readings: [ { link: "http://www.lua.org/",
+          title: "Lua",
+        },
+        { link: "http://love2d.org/",
+          title: "LOVE - The game engine" },
+        { link: "http://olivinelabs.com/busted/",
+          title: "Busted - The Unit Test Framework" },
+        { link: "http://nova-fusion.com/2012/08/27/lua-for-programmers-part-1/",
+          title: "Lua for Programmers series" },
+        { link: "https://www.youtube.com/watch?feature=player_embedded&v=nt2KKUSSJsY",
+          title: "A short Video about Test Driven Development" },
+        { link: "https://github.com/kikito/lua_missions",
+          title: "Lua Missions" } ] },
+    { week: "Week 3",
+      summary: "Testing fundamentals and writing user stories",
+      description: "Quality software is about more than just great code. From unit testing to user testing, we'll teach you the value of a test first philosophy, and show you how to put it into practice. Not a tester? Yes you are! Ensuring quality is <strong>everyone's</strong> responsibility.",
+      pre_readings: [ { link: "http://www.satisfice.com/blog/",
+          title: "James Bach - Software Testing",
+        },
+          { link: "http://specificationbyexample.com/key_ideas.html",
+          title: "User Stories Applied" },
+        { link: "http://books.google.com.au/books/about/User_stories_applied.html?id=SvIwuX4SVigC&redir_esc=y",
+          title: "Specification by Example" } ] },
+    { week: "Week 4",
+      summary: "Features, Features, Features",
+      description: "This week will be focussing solely on the analysis and delivery of features. Those who wanna code, will code. Those who don't, will help define the stories to your prioritised epics and help to setup the wall to allow the teams visibility of your project. Don't forget the standups and retrospectives too!",
+      pre_readings: [ { link: "http://dannorth.net/whats-in-a-story/",
+          title: "What's in a Story?",
+        },
+        { link: "http://www.scrumalliance.org/community/articles/2013/february/iteration-retrospective-activity-turn-the-tables",
+          title: "Agile Retrospectives - Ideas for exercises",
+        } ] } ]
+
+#course.row
+  .top
+  .mid
+    .row
+      %h1 Course Details / Itinerary
+    - programs.each do |program|
+      .row.week
+        .row
+          .span12
+            .header
+              %h3= program[:week]
+              %h4= program[:summary]
+              %img{src: "/assets/img/page-structure/course/dot.png"}
+        .row
+          .span8
+            .left
+              %p= program[:description]
+          .span4
+            .right
+              %h4 Pre-reading
+              %ul
+                - program[:pre_readings].each do |pre_reading|
+                  %li
+                    %a{href: pre_reading[:link]}= pre_reading[:title]
+  .bot
+
+
+
+
+
+
+
+
+{% endwater %}

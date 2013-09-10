@@ -10,6 +10,8 @@ $red : #bc0005;
 $yellow : #f6ee4b;
 $blue: #3498db;
 $dark-blue: #2980b9;
+$orange: #ffa031;
+$dark-orange: #ff7324;
 
 //bitbtn button colour
 $bit : #00897d;
@@ -32,9 +34,9 @@ $bit : #00897d;
   z-index  : -1;
 }
 
-@mixin pixelborder($color : black) {
-  box-shadow : -0.3em 0 0 0 $color,
-    0 -0.3em 0 0 $color, 0.3em 0 0 0 $color, 0 0.3em 0 0 $color;
+@mixin pixelborder($color : black, $size : 0.3em) {
+  box-shadow : (-$size) 0 0 0 $color,
+    0 (-$size) 0 0 $color, $size 0 0 0 $color, 0 $size 0 0 $color;
 }
 
 .right-align {
