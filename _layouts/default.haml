@@ -13,9 +13,11 @@
     {% if page.banner != false %}
     .top-alert
       %p
-        LevelUp Two starts at 6pm August 20th, 2013 @
-        %a{href: "https://maps.google.com.au/maps?q=Level+8,+51+Pitt+St,+Sydney,+NSW&hnear=8%2F51+Pitt+St,+Circular+Quay,+Sydney+New+South+Wales+2000&t=m&z=16"}
-          ThoughtWorks Sydney
+        Don't miss the next event! Subscribe to our
+        %a{href: "https://twitter.com/TW_LevelUp"} Twitter
+        and
+        %a{href: "https://www.facebook.com/ThoughtworksLevelUp"} Facebook
+        !
     {% endif %}
 
     #sky
@@ -30,19 +32,6 @@
           .left
             %a{href: "/"}
               %img{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
-
-          %ul.nav.nav-pills
-            %li
-              %a{href: "/course"}
-                Course Details
-            %li
-              %a{href: "/coaches"}
-                Coaches
-
-            %li
-              %a{href: "/events"}
-                Past Events
-
         {{ content }}
 
     #ground
@@ -76,16 +65,6 @@
                 %img{src: "/assets/img/page-structure/footer/facebook.png", title: "Facebook"}
 
           %ul.nav.nav-pills
-            %li
-              %a{href: "/course"}
-                Course Details
-            %li
-              %a{href: "/coaches"}
-                Coaches
-            %li
-              %a{href: "/events"}
-                Past Events
-
             %li
               %a{href: "http://www.thoughtworks.com/privacy-policy"}
                 Privacy Policy
