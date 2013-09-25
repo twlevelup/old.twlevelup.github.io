@@ -1,5 +1,9 @@
 @import "mixin";
 
+* {
+  box-sizing: border-box;
+}
+
 h1, h2 {
   @include unibold;
   color: black;
@@ -10,6 +14,14 @@ a {
   &:hover, &:active {
     color: darken($bit, 10%);
   }
+}
+
+.clear {
+  clear: both;
+}
+
+.row {
+  margin-left: 0;
 }
 
 .dots {
@@ -99,6 +111,7 @@ body {
       height: 210px;
       background: transparent url('/assets/img/page-structure/sky/cloud.png') no-repeat top center;
     }
+
     .container {
       header, .header {
         .left {
@@ -204,4 +217,86 @@ body {
     }
   } //footer
 
+}
+
+.box {
+  border-radius: 35px;
+  border: 5px solid black;
+  background: #fffb97;
+  position: relative;
+
+  padding: 10px 45px;
+
+  .tr, .tl, .br, .bl {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+  }
+
+  .tr {
+    right: -5px;
+    top: -5px;
+    background: url('/assets/img/page-structure/box/tr.png') no-repeat;
+  }
+
+  .br {
+    right: -5px;
+    bottom: -5px;
+    background: url('/assets/img/page-structure/box/br.png') no-repeat;
+  }
+
+  .tl {
+    left: -5px;
+    top: -5px;
+    background: url('/assets/img/page-structure/box/tl.png') no-repeat;
+  }
+
+  .bl {
+    left: -5px;
+    bottom: -5px;
+    background: url('/assets/img/page-structure/box/bl.png') no-repeat;
+  }
+
+  // margin-bottom: 40px;
+  // .top, .bot {
+  //   height: 35px;
+  // }
+  // .top {
+  //   background: transparent url('/assets/img/page-structure/box/top.png') no-repeat top center;
+  // }
+  // .mid {
+  //   background: transparent url('/assets/img/page-structure/box/mid.png') repeat-y top center;
+  //   padding: 0 45px 10px 45px;
+  //   .photo {
+  //     position: relative;
+  //     width: 170px;
+  //     height: 120px;
+  //     float: left;
+  //     img {
+  //       position: absolute;
+  //       top: -40px;
+  //       left: 0;
+  //       @include pixelborder;
+  //     }
+  //   }
+  //   h3 {
+  //     display: block;
+  //     @include unibold;
+  //     font-size: 1.2em;
+  //     margin: 0;
+  //     line-height: 1.5em;
+  //   }
+  //   h4 {
+  //     font-weight: normal;
+  //     padding-bottom: 17px;
+  //     color: $grey6;
+  //     @include uni;
+  //     font-size: 0.95em;
+  //   }
+  //   h5 {
+  //     @include uni;
+  //     font-size: 0.95em;
+  //     margin: 20px 0 0 0;
+  //   }
+  // }
 }

@@ -12,55 +12,6 @@ body {
           @include unibold;
         }
       }
-      .box {
-        margin-bottom: 40px;
-        .top, .bot {
-          width: 460px;
-          height: 35px;
-        }
-        .top {
-          background: transparent url('/assets/img/page-structure/box/top.png') no-repeat top center;
-        }
-        .mid {
-          background: transparent url('/assets/img/page-structure/box/mid.png') repeat-y top center;
-          padding: 0 45px 10px 45px;
-          .photo {
-            position: relative;
-            width: 170px;
-            height: 120px;
-            float: left;
-            img {
-              position: absolute;
-              top: -40px;
-              left: 0;
-              @include pixelborder;
-            }
-          }
-          h3 {
-            display: block;
-            @include unibold;
-            font-size: 1.2em;
-            margin: 0;
-            line-height: 1.5em;
-          }
-          h4 {
-            font-weight: normal;
-            padding-bottom: 17px;
-            color: $grey6;
-            @include uni;
-            font-size: 0.95em;
-          }
-          h5 {
-            @include uni;
-            font-size: 0.95em;
-            margin: 20px 0 0 0;
-          }
-        }
-        .bot {
-          background: transparent url('/assets/img/page-structure/box/bot.png') no-repeat top center;
-        }
-
-      }
     }
   } // #ground
 }
