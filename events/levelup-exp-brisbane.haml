@@ -1,0 +1,181 @@
+---
+layout: default
+banner: false
+hills: true
+---
+
+
+
+#hero.row
+  %h1
+    LEVELUP
+    %span.name
+      %strong EXP
+      %span.tagline BRISBANE
+
+  %h2
+    26 October 2013 at
+    %a{href: "https://maps.google.com.au/maps?hl=en&q=ThoughtWorks+Brisbane+19/127+Creek+St,+Brisbane+QLD+4000"}
+      ThoughtWorks Brisbane
+
+  %h3
+    The LevelUp program bridges the gap between what is
+    taught at University, and what happens on the ground in software
+    projects. Learn essential skills from people who do this not just
+    %em for
+    a living, but as a living.
+
+  #what-is-levelup.row
+    .span6
+      %p
+        LevelUp EXP is a unique one day conference to prepare university students interested in technology to enter the workforce. It brings together students with professional technical visionaries and engineers on the forefront of technology to discuss techniques and trends that help get you prepared to enter the workforce.
+
+
+    .span6
+      %p
+        Fusce facilisis, diam at semper tincidunt, massa orci molestie metus, id venenatis tortor lacus vitae nulla. Nam vestibulum in ligula vel tristique. Sed hendrerit purus sem, nec dapibus urna viverra vitae. Morbi non velit dictum lectus fringilla tincidunt. Vestibulum at eros et ante elementum iaculis.
+      %p
+        YIn hac habitasse platea dictumst. Nullam sagittis leo leo. Nulla at ornare massa, id fringilla dui. Quisque blandit viverra rutrum. Vivamus eu adipiscing elit. Donec pellentesque semper velit, vel ultrices nunc interdum eget.
+
+-##application.row
+-#  %a.apply-now
+-#    %span Apply Now
+-#
+-#  %form#form{action: "http://thoughtworks.us7.list-manage1.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=81c76f0a6d", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
+-#
+-#    - inputs = [{:text => "First Name", :name => "FNAME"},
+-#                {:text => "Last Name", :name => "LNAME"},
+-#                {:text => "Email Address", :name => "EMAIL"},
+-#                {:text => "Phone Number", :name => "PHONE"}]
+-#
+-#    - inputs.each do |field|
+-#      .row-fluid
+-#        .span5.right-align
+-#          %label{for: field[:name]}= field[:text]
+-#
+-#        .span5
+-#          %input.span10{id: field[:name], name: field[:name], type: "text"}
+-#
+-#    .row-fluid
+-#      .span5.right-align
+-#        %label{for: "EXPERIENCE"} Focus / Experience
+-#
+-#      .span5
+-#        :plain
+-#          <select name="EXPERIENCE" class="required" id="EXPERIENCE">
+-#            <option value="Developer">Developer</option>
+-#            <option value="Designer">Designer</option>
+-#            <option value="Project Manager">Project Manager</option>
+-#            <option value="Other">Other</option>
+-#          </select>
+-#
+-#        .hint
+-#          What best describes your experience or interest in software projects?
+-#
+-#
+-#    .row-fluid
+-#      .span5
+-#        #nothing
+-#      .span5
+-#        %button.bitbtn.btn-primary{type: "submit"}
+-#          Sign Up
+-#
+
+
+
+
+{% ground %}
+
+
+
+
+#coaches.row
+  .span3
+    %h2 Coaches
+  .span9
+    .row
+      .blurb
+
+        %p
+          LevelUp coaches include published authors, noted speakers,
+          and technology revolutionaries. Above all, they're software
+          sorcerers, project ninjas and agile advocates.
+
+        %p
+          Here's a little bit about the people you'll be working with this event.
+
+        %p
+          &nbsp;
+
+    .row
+      - coaches = [{:link => "/coaches", :src => "/assets/img/coaches/CathieHagen.jpg", :name => "Cathie Hagen", :description => "Business analysis in a agile environment, assisting delivery through the examining of business and user requirements and the facilitation of prioritisation and managing the backlog of stories (functionality) to be developed."},
+      {:link => "/coaches", :src => "/assets/img/coaches/BenMelbourne.jpg", :name => "Ben Melbourne", :description => "I've been in the IT industry for over 10 years, using titles such as UX Designer, UX Consultant, Interaction Designer, Information Architect, Experience Architect, Technical Writer or UX Person. My current business card says I&#39;m an Experience Design Consultant at ThoughtWorks."},
+      {:link => "/coaches", :src => "/assets/img/coaches/JamesOttaway.jpg", :name => "James Ottaway", :description => "I'm the Software Guy. Dun dun DUN!"}]
+
+      - coaches.each do |coach|
+        .span3.person
+          %a.bit{href: coach[:link]}
+            %img{src: coach[:src], title: coach[:name]}
+            %span #{coach[:name]}
+          %p #{coach[:description]}
+
+
+
+
+{% endground %}
+
+
+
+
+
+
+
+{% water %}
+
+- programs = [ { talkname: "Design Thinking",
+      presenter: "Ben Melbourne",
+      description: "<p>My approach: Develop empathy with users through research. Design with their needs in mind. Balance with business needs and technical feasibility. Close multi-disciplinary team collaboration. Prototype, test and iterate. Build, release and evolve.</p>",
+      pre_readings: [ { link: "http://www.agilemanifesto.org/",
+          title: "The Agile Manifesto",
+        },
+        { link: "http://www.infoq.com/minibooks/scrum-xp-from-the-trenches",
+          title: "Scrum-XP from the trenches",
+        },
+        { link: "http://www.youtube.com/watch?v=4u5N00ApR_k",
+          title: "Want to run an agile project?",
+        } ] }]
+
+#course.row
+  .top
+  .mid
+    .row
+      %h1 Agenda
+    - programs.each do |program|
+      .row.week
+        .row
+          .span12
+            .header
+              %h3= program[:talkname]
+              %h4= program[:presenter]
+              %img{src: "/assets/img/page-structure/course/dot.png"}
+        .row
+          .span8
+            .left
+              %p= program[:description]
+          .span4
+            .right
+              %h4 Pre-reading
+              %ul
+                - program[:pre_readings].each do |pre_reading|
+                  %li
+                    %a{href: pre_reading[:link]}= pre_reading[:title]
+  .bot
+
+
+
+
+
+
+
+
+{% endwater %}
