@@ -1,0 +1,54 @@
+---
+layout: registration
+banner: false
+hills: true
+---
+
+.event.box.red.brisbane
+  .tl
+  .tr
+
+  .city Brisbane
+
+  .details
+    .title
+      LevelUp EXP
+
+    .when
+      %strong 26th October 2013
+      at
+      %a{href: "http://goo.gl/maps/exb7Y", target: "_blank"} ThoughtWorks Brisbane
+
+  .about
+    %p
+      %strong LevelUp EXP
+      is a unique one day conference to prepare university students
+      interested in technology to enter the workforce. It brings together
+      students with professional technical visionaries and engineers on the
+      forefront of technology to discuss techniques and trends that help get
+      you prepared to enter the workforce.
+
+    %p
+      Your guides on the journey will be the best software professionals around
+      &mdash; delivering software by day &mdash; teaching you by night.
+
+  .clear
+
+  %form#form{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=8039da61b0", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
+
+    - inputs = [{:text => "First Name", :name => "FNAME"},
+                {:text => "Last Name", :name => "LNAME"},
+                {:text => "Email Address", :name => "EMAIL"}]
+
+    - inputs.each do |field|
+      .row-fluid
+        .span5.right-align
+          %label{for: field[:name]}= field[:text]
+
+        .span5
+          %input.span10{id: field[:name], name: field[:name], type: "text"}
+
+    .register
+      %button.bitbtn.btn-primary{type: "submit"}
+        Register
+
