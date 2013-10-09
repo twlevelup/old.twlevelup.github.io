@@ -20,14 +20,24 @@
         !
     {% endif %}
 
-    #sky
-      .sky
-      .container
-        %header.header.row
-          .left
-            %a{href: "/"}
-              %img{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
-        {{ content }}
 
-      .skyline
+    {{ content }}
 
+    %footer.footer
+      .blueblock
+      .dark
+        .container
+          %h4 Connect with us
+
+          %ul.nav.social
+            %li
+              %a{href: "https://twitter.com/TW_LevelUp"}
+                %img{src: "/assets/img/page-structure/footer/twitter.png", title: "Twitter"}
+            %li
+              %a{href: "https://www.facebook.com/ThoughtworksLevelUp"}
+                %img{src: "/assets/img/page-structure/footer/facebook.png", title: "Facebook"}
+
+          %ul.nav.nav-pills
+            %li
+              %a{href: "http://www.thoughtworks.com/privacy-policy"}
+                Privacy Policy

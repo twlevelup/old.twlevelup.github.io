@@ -1,50 +1,102 @@
 @import "mixin";
 
-$skyline-height: 550px;
-.skyline {
-  bottom: 0;
-  margin: 0 auto;
-  background: transparent url('/assets/img/brisbane/brisbane.png') no-repeat center center;
-  width: 100%;
-  height: $skyline-height;
-  margin-bottom: -$skyline-height;
-  position: absolute;
-  left: 0;
-  bottom: $skyline-height;
-}
 
-.box.brisbane {
-  position: relative;
-  margin-top: 75px;
-  border-bottom: none;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+body {
+  background: $grey8;
+  #sky {
+    background: #93e0ff;
+    width: 1100px;
+    margin: 0 auto;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
 
-  form {
-    padding: 50px;
-    border: 5px solid black;
-    margin-top: 50px;
-    background: #fff0ed;
-    margin-bottom: $skyline-height - 10px;
 
-    label {
-      @include uni;
+
+    $skyline-height: 550px;
+    .skyline {
+      position: relative;
+      .story-bridge {
+        bottom: 0;
+        margin: 0 auto;
+        background: transparent url('/assets/img/brisbane/brisbane.png') no-repeat center center;
+        width: 100%;
+        height: $skyline-height;
+        //margin-bottom: -$skyline-height;
+        position: absolute;
+        //left: 0;
+        //bottom: $skyline-height;
+
+      }
+
     }
 
-    .register {
-      float: left;
-      margin: 30px auto 0 auto;
-      width: 100%;
 
-      button {
-        margin: 0 auto;
-        display: block;
-        background-color: #81050e;
+    .box.brisbane {
+      //position: relative;
+      margin-top: 75px;
+      border-bottom: none;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
 
-        &:hover {
-          transition: 0.5s;
-          background-color: lighten(#81050e, 50%);
+      form {
+        padding: 50px;
+        border: 5px solid black;
+        margin-top: 50px;
+        background: #fff0ed;
+        margin-bottom: $skyline-height - 10px;
+
+        label {
+          @include uni;
         }
+
+        .register {
+          float: left;
+          margin: 30px auto 0 auto;
+          width: 100%;
+
+          button {
+            margin: 0 auto;
+            display: block;
+            background-color: #81050e;
+
+            &:hover {
+              transition: 0.5s;
+              background-color: lighten(#81050e, 50%);
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+  #water {
+    padding-bottom: 50px;
+    h2 {
+      font-size: 18px;
+    }
+
+    .talk {
+      padding-bottom: 20px;
+      padding-top: 10px;
+      background: #c6efff;
+      @include pixelborder;
+      .time {
+        padding-top: 10px;
+      }
+      h3 {
+        margin: 0;
+        font-size: 16px;
+        @include unibold;
+      }
+      h5 {
+        margin: 0 0 10px 0;
+        color: $grey6;
+        font-size: 16px;
+      }
+      p.pub {
+        text-align: center;
       }
     }
   }

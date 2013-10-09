@@ -5,63 +5,83 @@ hills: true
 ---
 
 
-- agenda = [{:name => "Ben Melbourne", :title => "Design Thinking", :description => "TBA"},
-            {:name => "Pete Chemsripong", :title => "User Testing", :description => "TBA"},
-            {:name => "Jean Robert D'amore", :title => "Helping you get your first job", :description => "TBA"},
-            {:name => "Chad Renando", :title => "Leadership", :description => "TBA"},
-            {:name => "James Ottaway", :title => "Functional Programming", :description => "TBA"}]
+#sky
+  .sky
+  .container
+    %header.header.row
+      .left
+        %a{href: "/"}
+          %img{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
+
+    .event.box.red.brisbane
+      .tl
+      .tr
+
+      .city Brisbane
+
+      .details
+        .title
+          LevelUp EXP
+
+        .when
+          %strong 26th October 2013
+          at
+          %a{href: "http://goo.gl/maps/exb7Y", target: "_blank"} ThoughtWorks Brisbane
+
+      .about
+        %p
+          %strong LevelUp EXP
+          is a unique one day conference to prepare university students
+          interested in technology to enter the workforce. It brings together
+          students with professional technical visionaries and engineers on the
+          forefront of technology to discuss techniques and trends that help get
+          you prepared to enter the workforce.
+
+        %p
+          Your guides on the journey will be the best software professionals around
+          &mdash; delivering software by day &mdash; teaching you by night.
 
 
-.event.box.red.brisbane
-  .tl
-  .tr
+      .clear
 
-  .city Brisbane
+      %form#form{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=8039da61b0", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
 
-  .details
-    .title
-      LevelUp EXP
+        - inputs = [{:text => "First Name", :name => "FNAME"},
+                    {:text => "Last Name", :name => "LNAME"},
+                    {:text => "Email Address", :name => "EMAIL"}]
 
-    .when
-      %strong 26th October 2013
-      at
-      %a{href: "http://goo.gl/maps/exb7Y", target: "_blank"} ThoughtWorks Brisbane
+        - inputs.each do |field|
+          .row-fluid
+            .span5.right-align
+              %label{for: field[:name]}= field[:text]
 
-  .about
-    %p
-      %strong LevelUp EXP
-      is a unique one day conference to prepare university students
-      interested in technology to enter the workforce. It brings together
-      students with professional technical visionaries and engineers on the
-      forefront of technology to discuss techniques and trends that help get
-      you prepared to enter the workforce.
+            .span5
+              %input.span10{id: field[:name], name: field[:name], type: "text"}
 
-    %p
-      Your guides on the journey will be the best software professionals around
-      &mdash; delivering software by day &mdash; teaching you by night.
+        .register
+          %button.bitbtn.btn-primary{type: "submit"}
+            Register
 
-    -#- agenda.each do |talk|
-    -#  talk[:title]
+  .skyline
+    .story-bridge
 
-    -#Title Stuff
 
-  .clear
+  #water.container
+    - agenda = [{:time => "10:00AM", :name => "Ben Melbourne", :title => "Design Thinking", :description => "What is Design Thinking? Why is it important to you and your project."},
+                {:time => "11:00AM", :name => "Pete Chemsripong", :title => "User Testing", :description => "Don't waste resources by"},
+                {:time => "12:00PM", :name => "Jean Robert D'amore", :title => "Helping you get your first job", :description => "TBA"},
+                {:time => "01:00PM", :name => "Chad Renando", :title => "Leadership", :description => "TBA"},
+                {:time => "02:00PM", :name => "James Ottaway", :title => "Functional Programming", :description => "TBA"}]
 
-  %form#form{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=8039da61b0", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
-
-    - inputs = [{:text => "First Name", :name => "FNAME"},
-                {:text => "Last Name", :name => "LNAME"},
-                {:text => "Email Address", :name => "EMAIL"}]
-
-    - inputs.each do |field|
-      .row-fluid
-        .span5.right-align
-          %label{for: field[:name]}= field[:text]
-
-        .span5
-          %input.span10{id: field[:name], name: field[:name], type: "text"}
-
-    .register
-      %button.bitbtn.btn-primary{type: "submit"}
-        Register
+    %h2 Agenda
+    - agenda.each do |talk|
+      .talk.row
+        .time.span1
+          %span= talk[:time]
+        .span10
+          %h3= talk[:title]
+          %h5= talk[:name]
+          %p= talk[:description]
+    .talk.row
+      %p.pub End of the day - To the Pub!!
 
