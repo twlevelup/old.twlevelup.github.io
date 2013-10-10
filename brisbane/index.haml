@@ -18,28 +18,28 @@ hills: true
       .tr
 
       .city Brisbane
+      .row
+        .span3
+          .title
+            LevelUp EXP
 
-      .details
-        .title
-          LevelUp EXP
+          .when
+            %strong 26th October 2013
+            at
+            %a{href: "http://goo.gl/maps/exb7Y", target: "_blank"} ThoughtWorks Brisbane
 
-        .when
-          %strong 26th October 2013
-          at
-          %a{href: "http://goo.gl/maps/exb7Y", target: "_blank"} ThoughtWorks Brisbane
+        .span7
+          %p
+            %strong LevelUp EXP
+            is a unique one day conference to prepare university students
+            interested in technology to enter the workforce. It brings together
+            students with professional technical visionaries and engineers on the
+            forefront of technology to discuss techniques and trends that help get
+            you prepared to enter the workforce.
 
-      .about
-        %p
-          %strong LevelUp EXP
-          is a unique one day conference to prepare university students
-          interested in technology to enter the workforce. It brings together
-          students with professional technical visionaries and engineers on the
-          forefront of technology to discuss techniques and trends that help get
-          you prepared to enter the workforce.
-
-        %p
-          Your guides on the journey will be the best software professionals around
-          &mdash; delivering software by day &mdash; teaching you by night.
+          %p
+            Your guides on the journey will be the best software professionals around
+            &mdash; delivering software by day &mdash; teaching you by night.
 
 
       .clear
@@ -67,21 +67,26 @@ hills: true
 
 
   #water.container
-    - agenda = [{:time => "10:00AM", :name => "Ben Melbourne", :title => "Design Thinking", :description => "What is Design Thinking? Why is it important to you and your project."},
-                {:time => "11:00AM", :name => "Pete Chemsripong", :title => "User Testing", :description => "Don't waste resources by"},
-                {:time => "12:00PM", :name => "Jean Robert D'amore", :title => "Helping you get your first job", :description => "TBA"},
-                {:time => "01:00PM", :name => "Chad Renando", :title => "Leadership", :description => "TBA"},
-                {:time => "02:00PM", :name => "James Ottaway", :title => "Functional Programming", :description => "TBA"}]
-
     %h2 Agenda
+
+    - agenda = [{:time => "9:00AM", :title => "Breakfast & Registration"},
+                {:time => "10:00AM", :name => "Ben Melbourne", :position => "Principle User Experience Designer, TW", :title => "Open Keynote: Design Thinking", :description => "What is Design Thinking? Why is it important to you and your project."},
+                {:time => "10:50AM", :name => "Cathie Hagen", :position => "Principle Business Analyst, TW", :title => "Business Analyst", :description => "From Wikipedia - A Business Analyst (BA) is someone who analyzes the existing or ideal organization and design of systems, including businesses, departments, and organizations. BAs also assess business models and their integration with technology."},
+                {:time => "11:40AM", :title => "Lunch"},
+                {:time => "12:30PM", :name => "TBA", :position => "TBA", :title => "Testing Fundamentals", :description => "Quality software is about more than just great code. From unit testing to user testing, we'll teach you the value of a test first philosophy, and show you how to put it into practice. Not a tester? Yes you are! Ensuring quality is everyone's responsibility."},
+                {:time => "1:20PM", :name => "James Ottaway", :position => "Senior Developer, TW", :title => "Functional Programming", :description => "From Wikipedia - Functional programming is a programming paradigm, a style of building the structure and elements of computer programs, that treats computation as the evaluation of mathematical functions and avoids state and mutable data. Functional programming emphasizes functions that produce results that depend only on their inputs and not on the program state - i.e. pure mathematical functions."},
+                {:time => "2:10PM", :name => "Jean Robert D'amore", :position => "Principle Tech Lead, TW", :title => "Helping you get your first job", :description => "TBA"},
+                {:time => "3:00PM", :name => "Pete Chemsripong", :position => "User Experience Design Consultant, TW", :title => "User Testing", :description => "The success of whatever you do hinge on the value it generate - which is directly proportion to how many people use it. Don't make things no-one wants to use - it's that simple. How? Let us show you."},
+                {:time => "3:40PM", :name => "Chad Renando", :position => "Management Consultant, Shape", :title => "Closing Keynote: On Leadership", :description => "From Wikipedia - Leadership has been described as 'a process of social influence in which one person can enlist the aid and support of others in the accomplishment of a common task', although there are alternative definitions of leadership. For example, some understand a leader simply as somebody whom people follow, or as somebody who guides or directs others, while others define leadership as 'organizing a group of people to achieve a common goal'"},
+                {:time => "4:30PM", :title => "Wrap up! To the Pub!!"}]
     - agenda.each do |talk|
       .talk.row
         .time.span1
           %span= talk[:time]
         .span10
           %h3= talk[:title]
-          %h5= talk[:name]
           %p= talk[:description]
-    .talk.row
-      %p.pub End of the day - To the Pub!!
+          %h5 #{talk[:name]}
+          %h6 #{talk[:position]}
+
 

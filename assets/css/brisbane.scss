@@ -87,16 +87,23 @@ body {
       }
       h3 {
         margin: 0;
-        font-size: 16px;
+        font-size: 18px;
         @include unibold;
       }
-      h5 {
-        margin: 0 0 10px 0;
-        color: $grey6;
-        font-size: 16px;
+      p {
+        margin: 10px 0 20px 0;
       }
-      p.pub {
-        text-align: center;
+      h5 {
+        margin: 0;
+        color: $grey7;
+        font-size: 17px;
+        font-weight: bold;
+      }
+      h6 {
+        font-style: italic;
+        font-weight: normal;
+        color: $grey5;
+        margin: 0;
       }
     }
   }
