@@ -29,7 +29,7 @@ GEM
       jekyll (>= 0.10.0)
       sass (>= 3.0.0)
     kramdown (1.0.2)
-    liquid (2.5.2)
+    liquid (2.5.3)
     maruku (0.6.1)
       syntax (>= 1.0.0)
     posix-spawn (0.3.6)
