@@ -2,4 +2,31 @@
 layout: default
 ---
 
-%h1 Thanks For Registering
+#hero.row.thank-you
+  .box
+    .tl
+    .tr
+    .bl
+    .br
+
+    %h1 Almost there...
+
+    %p
+      We've sent you a message to verify your email address. Once you've
+      confirmed your email you'll be registered for
+      %span.event
+
+    %p
+      If you're having trouble finding the email, please check your spam folder.
+
+:javascript
+  function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+  }
+
+  var event = getURLParameter("event");
+  if (event == null) {
+    $(".event").text("the event.");
+  } else {
+    $(".event").text(event + ".");
+  }
