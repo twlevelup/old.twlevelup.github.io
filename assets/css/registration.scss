@@ -2,4 +2,22 @@ body.registration #sky {
   .sky {
     //background: #b8f9ff url('/assets/img/page-structure/sky/better-sky.png') repeat-x top left;
   }
+
+  .event {
+    margin-top: 50px;
+
+    p {
+      padding: 15px 0;
+    }
+  }
+
+  .register {
+    margin-top: 50px;
+    text-align: center;
+
+    .bitbtn {
+      font-size: 30px;
+      line-height: 1.2;
+    }
+  }
 }

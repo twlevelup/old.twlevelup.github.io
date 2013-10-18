@@ -1,0 +1,81 @@
+---
+layout: registration
+banner: false
+hills: true
+---
+
+
+#sky
+  .sky
+  .container
+    %header.header.row
+      .left
+        %a{href: "/"}
+          %img{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
+
+    .event.box.red.melbourne
+      .tl
+      .tr
+
+      .city Melbourne
+      .row
+        .span3
+          .title
+            LevelUp
+
+          .when
+            %strong 6th November, 2013
+            to
+            %strong 4th December, 2013
+            at
+            %a{href: "http://goo.gl/maps/HcxWi", target: "_blank"} ThoughtWorks Melbourne
+
+        .span7
+          %p
+            LevelUp Melbourne is five weeks of intense learning open to all
+            University students interested in technology. From
+            %em 6pm to 9pm every Wednesday,
+            we'll teach you everything from from how excellent software is
+            developed to how software projects are managed
+
+          %p
+            Our instructors include published authors, prominent technologists,
+            and software developers who've written code for some of the biggest
+            companies in Australia.
+
+      .clear
+
+      %form#form{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=e20fe4ecba", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
+
+        - inputs = [{:text => "First Name", :name => "FNAME"},
+                    {:text => "Last Name", :name => "LNAME"},
+                    {:text => "Email Address", :name => "EMAIL"}]
+
+        - inputs.each do |field|
+          .row-fluid
+            .span5.right-align
+              %label{for: field[:name]}= field[:text]
+
+            .span5
+              %input.span10{id: field[:name], name: field[:name], type: "text"}
+
+        .row-fluid
+          .span5.right-align
+            %label{for: "EXPERIENCE"} Focus / Experience
+
+          .span5
+            :plain
+              <select name="EXPERIENCE" class="required" id="EXPERIENCE">
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Other (Analyst, Project Manager, etc)">Other (Analyst, Project Manager, etc)</option>
+              </select>
+
+            .hint
+              What best describes your experience or interest in software projects?
+
+
+        .register
+          %button.bitbtn.btn.btn-success{type: "submit"}
+            Register
+
