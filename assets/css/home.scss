@@ -23,7 +23,8 @@ body {
     .title {
       @include unibold;
       font-size: 18px;
-      line-height: 40px;
+      line-height: 1.4;
+      margin-bottom: 15px;
     }
 
     .city {
@@ -40,6 +41,10 @@ body {
 
       &.melbourne {
         background-color: #ff6600;
+      }
+
+      &.brisbane {
+        background-color: #3498db;
       }
     }
   }
