@@ -20,6 +20,36 @@ hills: true
     .bl
     .br
 
+    .city.sydney
+      Sydney
+
+    .details
+      .title
+        %a{href: "/sydney/levelup-exp-dec-2013/"}
+          LevelUp
+          %strong EXP
+
+      .when
+        %strong 26th October, 2013
+        at
+        %a{href: "http://goo.gl/maps/SUIi", target: "_blank"} ThoughtWorks Sydney
+
+    .about
+      %p
+        University students graduate every year, and enter the workforce often
+        unprepared for what they encounter. On 7th December, 2013 we hope to
+        change that. We are bringing together computer science and information
+        technology students with professional technical visionaries and
+        engineers to explore the future together.
+
+    .clear
+
+  .event.box
+    .tl
+    .tr
+    .bl
+    .br
+
     .city.melbourne
       Melbourne
 
@@ -50,39 +80,30 @@ hills: true
 
     .clear
 
-  .event.box
-    .tl
-    .tr
-    .bl
-    .br
-
-    .city.brisbane
-      Brisbane
-
-    .details
-      .title
-        %a{href: "/brisbane"}
-          LevelUp
-          %strong EXP
-
-      .when
-        %strong 26th October, 2013
-        at
-        %a{href: "http://goo.gl/maps/Uwcvv", target: "_blank"} ThoughtWorks Brisbane
-
-    .about
-      %p
-        University students graduate every year, and enter the workforce often
-        unprepared for what they encounter. On 26th October, 2013 we hope to
-        change that. We are bringing together computer science and information
-        technology students with professional technical visionaries and
-        engineers to explore the future together.
-
-    .clear
 
 {% ground %}
 #past-events.row
-  - pastevents = [{name: "LevelUp 2",
+  - pastevents = [{name: "LevelUp EXP",
+        location: "ThoughtWorks Brisbane",
+        location_url: "http://goo.gl/maps/Uwcvv",
+        city: "Brisbane",
+        date: "26 October 2013",
+        description: "University students graduate every year, and enter the workforce often unprepared for what they encounter. On 26th October, 2013 we hope to change that. We are bringing together computer science and information technology students with professional technical visionaries and engineers to explore the future together.",
+        photobook: "https://www.facebook.com/media/set/?set=a.341968892598851.1073741832.334505716678502&type=3",
+        photos: [ { img: "/assets/img/events/lvlxp-1.jpg" },
+            { img: "/assets/img/events/lvlxp-2.jpg" },
+            { img: "/assets/img/events/lvlxp-3.jpg" },
+            { img: "/assets/img/events/lvlxp-4.jpg" },
+        ],
+        testimonial: [ { text: "Good to know what's actually happening outside of Uni"},
+            { text: "I wish I could do both tracks"},
+            { text: "Thank you ThoughtWorks for taking time on a weekend of conducting an insightful and very helpful session"},
+            { text: "Very informative"},
+            { text: "Good high level understanding of concepts"},
+            { text: "Awesome session"},
+            { text: "Inspiring"},
+        ]},
+      {name: "LevelUp 2",
         location: "ThoughtWorks Sydney",
         location_url: "http://goo.gl/maps/SUIi",
         city: "Sydney",
