@@ -21,7 +21,7 @@ hills: true
       .row
         .span3
           .title
-            LevelUp EXP
+            LevelUp EXP 2
 
           .when
             %strong 7th Dec, 2013
@@ -49,7 +49,8 @@ hills: true
 
         - inputs = [{:text => "First Name", :name => "FNAME"},
                     {:text => "Last Name", :name => "LNAME"},
-                    {:text => "Email Address", :name => "EMAIL"}]
+                    {:text => "Email Address", :name => "EMAIL"},
+                    {:text => "How did you hear about this event?", :name => "HOWHEAR"}]
 
         - inputs.each do |field|
           .row-fluid
