@@ -2,7 +2,7 @@
 
 All changes should be made on the `source` branch. To preview the site locally:
 
-    $ bundle install && bundle exec jekyll serve
+    $ bundle install && bundle exec jekyll serve -w
 
 Note that the normal Jekyll live-code reloading doesn't seem to work with the
 sass plugin. If you make styling changes you'll have to restart the server.
