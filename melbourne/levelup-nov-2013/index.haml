@@ -13,59 +13,52 @@ hills: true
         %a{href: "/"}
           %img{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
 
-    .event.box.red.melbourne
+    .event.box.red.melbourne.row
       .tl
       .tr
       .bl
       .br
 
       .city Melbourne
-      .row
-        .span3
-          .title
-            LevelUp
+      .col-sm-4
+        .title
+          LevelUp
 
-          .when
-            %strong 6th November, 2013
-            to
-            %strong 4th December, 2013
-            at
-            %a{href: "http://goo.gl/maps/HcxWi", target: "_blank"} ThoughtWorks Melbourne Office
+        .when
+          %strong 6th November, 2013
+          to
+          %strong 4th December, 2013
+          at
+          %a{href: "http://goo.gl/maps/HcxWi", target: "_blank"} ThoughtWorks Melbourne Office
 
-        .span7
-          %p
-            LevelUp Melbourne is five weeks of intense learning open to all
-            University students interested in technology. From
-            %em 6pm to 9pm every Wednesday,
-            we'll teach you everything from from how excellent software is
-            developed to how software projects are managed.
+      .col-sm-8
+        %p
+          LevelUp Melbourne is five weeks of intense learning open to all
+          University students interested in technology. From
+          %em 6pm to 9pm every Wednesday,
+          we'll teach you everything from from how excellent software is
+          developed to how software projects are managed.
 
-          %p
-            Our instructors include published authors, prominent technologists,
-            and software developers who've written code for some of the biggest
-            companies in Australia.
+        %p
+          Our instructors include published authors, prominent technologists,
+          and software developers who've written code for some of the biggest
+          companies in Australia.
 
-      .clear
+      .col-md-8.col-md-offset-4
+        %form#form{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=e20fe4ecba", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
 
-      %form#form{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=e20fe4ecba", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
-
-        - inputs = [{:text => "First Name", :name => "FNAME"},
-                    {:text => "Last Name", :name => "LNAME"},
-                    {:text => "Email Address", :name => "EMAIL"}]
-
-        - inputs.each do |field|
-          .row-fluid
-            .span5.right-align
-              %label{for: field[:name]}= field[:text]
-
-            .span5
-              %input.span10{id: field[:name], name: field[:name], type: "text"}
-
-        .row-fluid
-          .span5.right-align
-            %label{for: "EXPERIENCE"} Focus / Experience
-
-          .span5
+          - inputs = [{:text => "First Name", :name => "FNAME"},
+                      {:text => "Last Name", :name => "LNAME"},
+                      {:text => "Email Address", :name => "EMAIL"}]
+          - inputs.each do |field|
+            .form-group
+              %label.col-sm-6.control-label{for: field[:name]}= field[:text]
+              .col-sm-6
+                %input.form-control{id: field[:name], name: field[:name], type: "text"}
+          .hint
+            What best describes your experience or interest in software projects?
+          %label.col-sm-6.control-label{for: "EXPERIENCE"} Focus / Experience
+          .col-sm-6
             :plain
               <select name="EXPERIENCE" class="required" id="EXPERIENCE">
                 <option value="Developer">Developer</option>
@@ -73,11 +66,9 @@ hills: true
                 <option value="Other (Analyst, Project Manager, etc)">Other (Analyst, Project Manager, etc)</option>
               </select>
 
-            .hint
-              What best describes your experience or interest in software projects?
-
-
-        .register
-          %button.bitbtn.btn.btn-success{type: "submit"}
-            I want to attend
-
+          .register.visible-xs
+            %button.bitbtn.btn.btn-success.btn-sm{type: "submit"}
+              I want to attend
+          .register.hidden-xs
+            %button.bitbtn.btn.btn-success.btn-lg{type: "submit"}
+              I want to attend 

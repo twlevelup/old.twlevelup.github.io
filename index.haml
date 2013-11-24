@@ -14,7 +14,7 @@ hills: true
 
 #upcoming-events
   %h2 Upcoming Events
-  .event.box
+  .event.box.row
     .tl
     .tr
     .bl
@@ -23,7 +23,7 @@ hills: true
     .city.sydney
       Sydney
 
-    .details
+    .details.col-sm-4
       .title
         %a{href: "/sydney/levelup-exp-dec-2013/"}
           LevelUp
@@ -34,7 +34,7 @@ hills: true
         at
         %a{href: "http://goo.gl/maps/SUIi", target: "_blank"} ThoughtWorks Sydney
 
-    .about
+    .about.col-sm-8
       %p
         University students graduate every year, and enter the workforce often
         unprepared for what they encounter. On 7th December, 2013 we hope to
@@ -44,7 +44,7 @@ hills: true
 
     .clear
 
-  .event.box
+  .event.box.row
     .tl
     .tr
     .bl
@@ -53,7 +53,7 @@ hills: true
     .city.melbourne
       Melbourne
 
-    .details
+    .details.col-sm-4
       .title
         %a{href: "/melbourne/levelup-nov-2013/"}
           LevelUp Melbourne
@@ -65,7 +65,7 @@ hills: true
         at
         %a{href: "http://goo.gl/maps/HcxWi", target: "_blank"} ThoughtWorks Melbourne Office
 
-    .about
+    .about.col-sm-8
       %p
         LevelUp Melbourne is five weeks of intense learning open to all
         University students interested in technology. From
@@ -82,7 +82,7 @@ hills: true
 
 
 {% ground %}
-#past-events.row
+#past-events
   - pastevents = [{name: "LevelUp EXP",
         location: "ThoughtWorks Brisbane",
         location_url: "http://goo.gl/maps/Uwcvv",
@@ -172,7 +172,7 @@ hills: true
 
   %h2 Past events
   - pastevents.each do |event|
-    .event.box
+    .event.box.row
       .tl
       .tr
       .bl
@@ -180,14 +180,14 @@ hills: true
 
       .city{class: event[:city].downcase}= event[:city]
 
-      .details
+      .details.col-sm-4
         .title= event[:name]
         .when
           %strong= event[:date]
           at
           %a{href: event[:location_url], target: "_blank"}= event[:location]
 
-      .about
+      .about.col-sm-8
         %p= event[:description]
 
       .clear

@@ -13,56 +13,53 @@ hills: true
         %a{href: "/"}
           %img{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
 
-    .event.box.red
+    .event.box.red.row
       .tl
       .tr
 
       .city Sydney
-      .row
-        .span3
-          .title
-            LevelUp EXP 2
 
-          .when
-            %strong 7th Dec, 2013
-            at
-            %a{href: "http://goo.gl/maps/Uwcvv", target: "_blank"} ThoughtWorks Sydney
+      .col-sm-4
+        .title
+          LevelUp EXP 2
+        .when
+          %strong 7th Dec, 2013
+          at
+          %a{href: "http://goo.gl/maps/Uwcvv", target: "_blank"} ThoughtWorks Sydney
 
-        .span7
-          %p
-            %a{href: "http://www.thoughtworks.com/"}ThoughtWorks
-            is organising unique one-day conference called LevelUp EXP that is open to IT undergraduates, aiming at providing insight into the IT industry and software development practices that are not necessary taught at Uni.
-          %p
-            %strong LevelUp EXP
-            aims to prepare university students interested in technology to enter the workforce. It brings together students with professional technical visionaries and engineers on the forefront of technology to discuss techniques and trends that help get you prepared to enter the workforce.
-          %p Your guides on the journey will be the software professionals with unique and rich experiences &mdash; delivering software on weekdays &mdash; teaching you on weekend.
-          %br
-          %p The conference is free to students, however places are limited.
-          %p
-            Check out
-            %a{href: "https://www.facebook.com/ThoughtworksLevelUp"} some of our past events
-            !
+      .col-sm-8
+        %p
+          %a{href: "http://www.thoughtworks.com/"}ThoughtWorks
+          is organising unique one-day conference called LevelUp EXP that is open to IT undergraduates, aiming at providing insight into the IT industry and software development practices that are not necessary taught at Uni.
+        %p
+          %strong LevelUp EXP
+          aims to prepare university students interested in technology to enter the workforce. It brings together students with professional technical visionaries and engineers on the forefront of technology to discuss techniques and trends that help get you prepared to enter the workforce.
+        %p Your guides on the journey will be the software professionals with unique and rich experiences &mdash; delivering software on weekdays &mdash; teaching you on weekend.
+        %p The conference is free to students, however places are limited.
+        %p
+          Check out
+          %a{href: "https://www.facebook.com/ThoughtworksLevelUp"} some of our past events
+          !
+      .col-md-8.col-md-offset-4
 
-      .clear
+        %form#form.form-horizontal{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=792737c827", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
 
-      %form#form{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=792737c827", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
-
-        - inputs = [{:text => "First Name", :name => "FNAME"},
+          - inputs = [{:text => "First Name", :name => "FNAME"},
                     {:text => "Last Name", :name => "LNAME"},
                     {:text => "Email Address", :name => "EMAIL"},
                     {:text => "How did you hear about this event?", :name => "HOWHEAR"}]
 
-        - inputs.each do |field|
-          .row-fluid
-            .span5.right-align
-              %label{for: field[:name]}= field[:text]
-
-            .span5
-              %input.span10{id: field[:name], name: field[:name], type: "text"}
-
-        .register
-          %button.bitbtn.btn-primary{type: "submit"}
-            Register
+          - inputs.each do |field|
+            .form-group
+              %label.col-sm-6.control-label{for: field[:name]}= field[:text]
+              .col-sm-6
+                %input.form-control{id: field[:name], name: field[:name], type: "text"}
+          .register.visible-xs
+            %button.bitbtn.btn-sm.btn-primary{type: "submit"}
+              Register
+          .register.hidden-xs
+            %button.bitbtn.btn-lg.btn-primary{type: "submit"}
+              Register
 
   #water.container
     %h2 Agenda
