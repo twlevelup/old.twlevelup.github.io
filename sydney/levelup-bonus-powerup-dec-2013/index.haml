@@ -1,0 +1,58 @@
+---
+layout: registration
+banner: false
+hills: true
+---
+
+%link{rel: "stylesheet", href: "/assets/css/sydney.css"}
+#sky
+  .sky
+  .container
+    %header.header.row
+      .left
+        %a{href: "/"}
+          %img.img-responsive{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
+
+    .event.box.red.row
+      .tl
+      .tr
+
+      .city Sydney
+
+      .col-sm-4
+        .title
+          LevelUp Bonus Level
+        .when
+          %strong 6-9pm 12th Dec, 2013
+          at
+          %a{href: "http://goo.gl/maps/Uwcvv", target: "_blank"} ThoughtWorks Sydney
+
+      .col-sm-8
+        %p
+          Wanna hear from 2 international experts in Sydney for the YOW conference? This bonus level will see
+          %a{href: 'http://jimwebber.org/'} Jim Webber
+          talking about graph-oriented databases and
+          %a{href: 'http://www.agileproductdesign.com/'} Jeff Patton
+          talking about lean concepts. Register for this one and get some special power ups before Christmas!
+      .col-md-8.col-md-offset-4
+
+        %form#form.form-horizontal{action: "http://thoughtworks.us7.list-manage1.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=a853a142f1", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
+
+          - inputs = [{:text => "First Name", :name => "FNAME"},
+                    {:text => "Last Name", :name => "LNAME"},
+                    {:text => "Email Address", :name => "EMAIL"},
+                    {:text => "How did you hear about this event?", :name => "HOWHEAR"}]
+
+          - inputs.each do |field|
+            .form-group
+              %label.col-sm-6.control-label{for: field[:name]}= field[:text]
+              .col-sm-6
+                %input.form-control{id: field[:name], name: field[:name], type: "text"}
+          .register.visible-xs
+            %button.bitbtn.btn-sm.btn-primary{type: "submit"}
+              Register
+          .register.hidden-xs
+            %button.bitbtn.btn-lg.btn-primary{type: "submit"}
+              Register
+
+  #water.container.very-wide
