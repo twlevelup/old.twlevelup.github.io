@@ -9,15 +9,11 @@ body {
     padding-top: 25px;
 
     .details {
-/*      width: 30%;
-      float: left;
-*/      padding: 0 15px;
+      padding: 0 15px;
     }
 
     .about {
-/*      width: 70%;
-      float: left;
-*/      padding: 0 15px;
+      padding: 0 15px;
     }
 
     .title {
@@ -38,6 +34,10 @@ body {
       top: -15px;
       background-color: #ec038d;
       color: white;
+
+      &.jozi {
+        background-color: #E13329;
+      }
 
       &.melbourne {
         background-color: #ff6600;

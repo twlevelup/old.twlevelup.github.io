@@ -1,0 +1,62 @@
+---
+layout: registration
+banner: false
+hills: true
+---
+
+#sky
+  .sky
+  .container
+    %header.header.row
+      .left
+        %a{href: "/"}
+          %img.img-responsive{src: "/assets/img/page-structure/logo.png", title: "LevelUp: ThoughtWorks"}
+
+    .event.box.red.row
+      .tl
+      .tr
+
+      .city Johannesburg
+
+      .col-sm-4
+        .title
+          LevelUp EXP
+        .when
+          %strong 11th January, 2014
+          at
+          %a{href: "http://goo.gl/llt22", target: "_blank"} ThoughtWorks Braamfontein
+
+      .col-sm-8
+        %p
+          University students graduate every year, and enter the workforce often
+          unprepared or unsure of what they'll encounter in the workplace. On
+          11th December, 2014 ThoughtWorks is changing that. We are bringing
+          together computer science and information technology students with
+          professional technical visionaries and engineers to explore the future
+          together.
+
+        %p
+          This one day mini-conference will cover technical topics, agile
+          techniques, and how to bridge the gap from IT graduate, to IT
+          professional.
+
+      .col-md-8.col-md-offset-4
+        %form#form.form-horizontal{action: "http://thoughtworks.us7.list-manage.com/subscribe/post?u=e01f405fabad2dd5617122558&amp;id=0d1d6596b6", method: "post", name: "mc-embedded-subscribe-form", target: "_blank", novalidate: ""}
+
+          - inputs = [{:text => "First Name", :name => "FNAME"},
+                    {:text => "Last Name", :name => "LNAME"},
+                    {:text => "Email Address", :name => "EMAIL"}]
+
+          - inputs.each do |field|
+            .form-group
+              %label.col-sm-6.control-label{for: field[:name]}= field[:text]
+              .col-sm-6
+                %input.form-control{id: field[:name], name: field[:name], type: "text"}
+          .register.visible-xs
+            %button.bitbtn.btn-sm.btn-primary{type: "submit"}
+              Register
+          .register.hidden-xs
+            %button.bitbtn.btn-lg.btn-primary{type: "submit"}
+              Register
+
+  #water.container.very-wide
